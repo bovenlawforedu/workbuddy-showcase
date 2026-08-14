@@ -3,210 +3,128 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>风格提取库 · FDE 作品集</title>
+<title>66 天幼小衔接训练营 · 配图系统｜FDE 作品集</title>
 <style>
   :root{
-    --cream:#FFF8F0; --beige:#F3E9DC; --coral:#E8907B; --sage:#9CAF88;
-    --sky:#A9C7D9; --ink:#4A3F35; --soft:#7A6A5A; --line:#E7D9C8;
+    --bg:#fdf6ef; --card:#fffdfa; --ink:#3a322c; --sub:#7a6f66;
+    --accent:#e8915b; --accent2:#f2c14e; --line:#efe2d4;
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  body{
-    font-family:-apple-system,"PingFang SC","Microsoft YaHei",Segoe UI,sans-serif;
-    background:var(--cream);color:var(--ink);line-height:1.7;
-    -webkit-font-smoothing:antialiased;
-  }
-  .wrap{max-width:920px;margin:0 auto;padding:0 22px}
-  header.hero{
-    background:linear-gradient(135deg,#FCEEE2 0%,#F6E6D6 100%);
-    padding:64px 0 52px;text-align:center;border-bottom:1px solid var(--line);
-  }
-  .badge{
-    display:inline-block;background:var(--sage);color:#fff;font-size:13px;
-    padding:5px 14px;border-radius:999px;letter-spacing:.5px;margin-bottom:18px;
-  }
-  header.hero h1{font-size:38px;font-weight:800;letter-spacing:1px}
-  header.hero p{margin-top:12px;color:var(--soft);font-size:17px;max-width:640px;margin-left:auto;margin-right:auto}
-  section{padding:46px 0;border-bottom:1px solid var(--line)}
-  h2{font-size:24px;margin-bottom:6px}
-  .sub{color:var(--soft);font-size:14px;margin-bottom:22px}
-  .card{background:#fff;border:1px solid var(--line);border-radius:16px;padding:22px 24px;margin:14px 0;
-    box-shadow:0 2px 10px rgba(180,140,100,.06)}
-  .pill{display:inline-block;background:var(--beige);color:var(--ink);font-size:13px;
-    padding:4px 12px;border-radius:8px;margin:4px 6px 4px 0;font-weight:600}
-  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:6px}
-  th,td{border:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
-  th{background:var(--beige);font-weight:700}
-  tr:nth-child(even){background:#FCF6EE}
-  code{background:var(--beige);padding:2px 6px;border-radius:6px;font-size:13px;
-    font-family:"SF Mono",Consolas,monospace;color:#9A5B3F}
-  pre{background:#3A332B;color:#F3E9DC;padding:16px 18px;border-radius:12px;overflow:auto;
-    font-size:13px;line-height:1.55;font-family:"SF Mono",Consolas,monospace;margin-top:8px}
-  .imgs{display:flex;gap:18px;flex-wrap:wrap;margin-top:10px}
-  .imgs figure{flex:1 1 240px;background:#fff;border:1px solid var(--line);border-radius:14px;
-    overflow:hidden;box-shadow:0 2px 10px rgba(180,140,100,.08)}
-  .imgs img{width:100%;display:block}
-  .imgs figcaption{padding:10px 12px;font-size:13px;color:var(--soft);text-align:center}
-  .flow{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin:14px 0}
-  .flow .step{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px 16px;flex:1 1 200px}
-  .flow .step b{color:var(--coral)}
-  .flow .arrow{color:var(--sage);font-size:20px;font-weight:800}
-  .map{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px}
-  .map .m{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}
-  .map .m b{color:var(--sage)}
-  footer{padding:34px 0 50px;text-align:center;color:var(--soft);font-size:13px}
-  a{color:var(--coral);text-decoration:none}
+  body{font-family:-apple-system,"PingFang SC","Microsoft YaHei",sans-serif;
+    background:var(--bg);color:var(--ink);line-height:1.7;padding:0 16px}
+  .wrap{max-width:880px;margin:0 auto;padding:48px 0 80px}
+  header{border-bottom:3px solid var(--accent);padding-bottom:20px;margin-bottom:28px}
+  h1{font-size:30px;letter-spacing:.5px}
+  .tag{display:inline-block;background:var(--accent2);color:#5a4a1f;
+    font-size:13px;padding:3px 10px;border-radius:20px;margin-top:10px}
+  h2{font-size:21px;margin:38px 0 14px;color:var(--accent);
+    border-left:5px solid var(--accent);padding-left:12px}
+  h3{font-size:16px;margin:18px 0 8px;color:var(--ink)}
+  p,li{color:var(--sub);font-size:15px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;
+    padding:20px 22px;margin:16px 0;box-shadow:0 2px 10px rgba(180,140,100,.06)}
+  .warn{background:#fff4ec;border:1px solid #f3c9a8;color:#8a4b22}
+  table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+  th,td{border:1px solid var(--line);padding:9px 11px;text-align:left}
+  th{background:#fbeede;color:var(--ink)}
+  code{background:#f4e9dc;padding:1px 6px;border-radius:5px;font-size:13px;color:#8a4b22}
+  .imgs{display:flex;gap:18px;flex-wrap:wrap;margin:14px 0}
+  .imgs figure{flex:1;min-width:220px;margin:0}
+  .imgs img{width:100%;border-radius:12px;border:1px solid var(--line)}
+  .imgs figcaption{font-size:12px;color:var(--sub);margin-top:6px;text-align:center}
+  .pill{display:inline-block;background:#eef6ee;color:#3f7a45;border:1px solid #cfe6cf;
+    padding:2px 9px;border-radius:6px;font-size:13px;margin:2px 4px 2px 0}
+  .pill.no{background:#fdecec;color:#a33;border-color:#f3c9c9}
+  footer{margin-top:50px;font-size:12px;color:#a99c8f;text-align:center}
+  a{color:var(--accent)}
 </style>
 </head>
 <body>
+<div class="wrap">
+  <header>
+    <h1>66 天幼小衔接训练营 · 内容 + 配图系统</h1>
+    <span class="tag">真实项目 · FDE 作品集</span>
+    <p style="margin-top:14px">一个 66 天连续的内容营：每天一篇主题内容 + 一张风格一致的插画，经微信小程序每日定时推送触达家长。</p>
+  </header>
 
-<header class="hero">
-  <div class="wrap">
-    <span class="badge">FDE · Forward Deployed Engineer 作品集</span>
-    <h1>风格提取库</h1>
-    <p>把设计语言沉淀成可复用库，并在关键时调用适配 —— FDE「风格库沉淀 + 关键时调用适配」的实物样本。本任务也是 coding 案例库点名的「给设计总监做风格库沉淀 + 调用」构想的最小可运行版。</p>
+  <div class="card warn">
+    <strong>⚠️ 项目边界声明</strong>
+    <p>这是<strong>一个独立项目</strong>——66 天幼小衔接训练营的配图与交付系统。
+    <strong>不是</strong>「设计总监风格库 / 风格提取库」（那是一个完全不同的项目构想）。
+    本项目的风格、客户画像、客户需求<strong>只属于本项目</strong>，不可套用到其他项目；
+    可跨项目复用的<strong>只有方法论逻辑</strong>，不是这些具体细节。</p>
   </div>
-</header>
 
-<section>
-  <div class="wrap">
-    <h2>① 风格定义</h2>
-    <p class="sub">从一次性 prompt，沉淀为可复用、可调用的风格规范（style.md）</p>
-    <div class="card">
-      <p><b>风格名称</b>：温暖亲子扁平插画</p>
-      <p style="margin-top:8px"><b>核心特征</b>：扁平、极简、柔和；暖色调为主（奶油白、米色、暖棕、柔和绿/蓝点缀）；孩子形象可爱圆润、表情温柔；场景简洁、大量留白；<b>画面中不出现任何中英文文字</b>。</p>
-      <p style="margin-top:8px"><b>模型 / 比例</b>：SDXL 1.0（英文 prompt）· 3:4 竖版（1024×1365），适合移动端。</p>
-    </div>
-    <div class="card">
-      <p><b>Prompt 固定模板</b></p>
-      <p style="margin-top:6px"><code>A young child [动作/场景]. [表情]. [光线]. [配色]. [氛围/金句].</code></p>
-    </div>
+  <h2>1. 进现场摸到的真痛点</h2>
+  <div class="card">
+    <p>不是「不会画一张图」，而是<strong>「66 张要风格一致、要每天稳定产出」</strong>。
+    纯手工出图慢，且不同人/不同天画出来风格漂移。于是把「设计语言」从个人脑子里
+    <strong>沉淀成可复用资产</strong>，让出图可规模化、可复现。</p>
   </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <h2>② 可替换关键词库</h2>
-    <p class="sub">把「不变的风格」拆成可轮换的模块，每日只换变量、守住暖色边界</p>
-    <div class="card">
-      <p><b>主色调（每次选 1–2）</b></p>
-      <div>
-        <span class="pill">coral</span><span class="pill">lavender</span><span class="pill">sage green</span>
-        <span class="pill">sky blue</span><span class="pill">soft pink</span><span class="pill">warm orange</span>
-      </div>
-      <p style="margin-top:12px"><b>点缀色（每次选 1–2）</b></p>
-      <div>
-        <span class="pill">teal</span><span class="pill">golden</span><span class="pill">soft yellow</span><span class="pill">dusty rose</span>
-      </div>
-      <p style="margin-top:12px"><b>光线（每次选 1）</b></p>
-      <div>
-        <span class="pill">Soft golden afternoon light</span><span class="pill">Soft morning light</span>
-        <span class="pill">Soft natural light</span><span class="pill">Warm sunrise colors</span>
-      </div>
-      <p style="margin-top:12px"><b>氛围（每次选 1）</b></p>
-      <div>
-        <span class="pill">calm and nurturing</span><span class="pill">quiet concentration</span>
-        <span class="pill">encouraging and supportive</span><span class="pill">gentle hope</span>
-        <span class="pill">proud accomplishment</span><span class="pill">wonder and fascination</span>
-      </div>
-      <p style="margin-top:12px"><b>表情（按主题选）</b></p>
-      <div>
-        <span class="pill">gentle and patient</span><span class="pill">calm and absorbed</span>
-        <span class="pill">brave but slightly nervous</span><span class="pill">proud and happy</span><span class="pill">full of wonder</span>
-      </div>
-    </div>
+  <h2>2. 端到端 Forward Deploy（全链路自己搭通）</h2>
+  <table>
+    <tr><th>环节</th><th>产物</th><th>作用</th></tr>
+    <tr><td>内容规划</td><td><code>content/planned/day*.json</code>（56 个 day）</td><td>每个 day 含 <code>visualHint</code>（中文视觉提示）</td></tr>
+    <tr><td>风格沉淀</td><td><code>style.md</code></td><td>把视觉风格定义成可复用规范（配色/光线/氛围/表情关键词库 + Day1–6 锚）</td></tr>
+    <tr><td>提取</td><td><code>extract_hints.py</code></td><td>批量提取每个 day 的 <code>visualHint</code></td></tr>
+    <tr><td>关键时调用适配</td><td><code>build_prompts.py</code></td><td>锁 <code>STYLE_LOCK</code> 风格后缀，把中文 <code>visualHint</code> 适配成英文 SDXL prompt</td></tr>
+    <tr><td>交付自动化</td><td><code>publish.js</code> + 云函数 + 微信每日推送</td><td>配图 → 写入 → 定时发布全链路</td></tr>
+    <tr><td>一线诊断</td><td><code>diagnosis-day11</code></td><td>定位「Day11 没完成」真因</td></tr>
+  </table>
+
+  <h2>3. 配图风格规范（本项目专属 · 温暖亲子扁平插画）</h2>
+  <div class="card">
+    <p>来源：业务方提供的原始风格定义 + Day1–6 完整 prompt + 可替换关键词库；模型 SDXL 1.0；比例 3:4 竖版。</p>
+    <h3>关键词库（本项目专属，非通用）</h3>
+    <p>
+      <span class="pill">暖米色背景</span><span class="pill">低饱和马卡龙色块</span><span class="pill">均匀柔光</span>
+      <span class="pill">扁平无质感</span><span class="pill">温暖安宁</span><span class="pill">亲子亲密</span>
+      <span class="pill">圆润简洁五官</span><span class="pill">温和微笑</span>
+    </p>
+    <p style="margin-top:10px;font-size:13px;color:#a33"><strong>注意：</strong>以上风格只服务于训练营，不可作为其他项目的风格参考。</p>
   </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <h2>③ 提取 → 调用适配 闭环</h2>
-    <p class="sub">变的部分（主题/动作）每天从内容提取，不变的部分（风格）锁死在库里</p>
-    <div class="flow">
-      <div class="step"><b>沉淀</b><br/>style.md 定义风格规范 + 关键词库 + Day1–6 锚</div>
-      <div class="arrow">→</div>
-      <div class="step"><b>提取</b><br/>extract_hints.py 从 day*.json 提取 visualHint</div>
-      <div class="arrow">→</div>
-      <div class="step"><b>调用适配</b><br/>build_prompts.py 锁 STYLE_LOCK 后缀 → SDXL</div>
-    </div>
-    <div class="card">
-      <p><b>关键机制 · STYLE_LOCK（风格锁定后缀）</b></p>
-      <pre>STYLE_LOCK = ("warm children's book illustration style, "
-              "flat minimal shapes, soft rounded character, "
-              "clean simple background, no text, no letters, no words")
-# 每个 day：
-prompt = visualHint_en + ", " + STYLE_LOCK   # 变量(主题) + 锁定(风格)</pre>
-    </div>
-    <div class="card">
-      <p><b>visualHint → prompt 对照（day15）</b></p>
-      <p style="margin-top:6px"><b>输入（中文，提取自内容）</b>：一个孩子专注地写一个字或读故事书，家长在旁边微笑着观察，桌上摊着一本成长记录本</p>
-      <p style="margin-top:10px"><b>输出（已锁风格）</b>：</p>
-      <pre>A young child focused on writing a word or reading a storybook, a parent
-smiling and watching nearby, a growth journal open on the desk.
-Calm proud expression. Soft warm light. Warm beige, cream white,
-soft coral accents. Quiet sense of achievement.
-warm children's book illustration style, flat minimal shapes,
-soft rounded character, clean simple background, no text, no letters, no words</pre>
-    </div>
+  <h2>4. 提取 → 调用适配机制</h2>
+  <div class="card">
+    <p><strong>① 提取</strong> <code>extract_hints.py</code>：从 <code>day*.json</code> 读取 <code>visualHint</code>（当天内容的中文视觉提示）。</p>
+    <p><strong>② 调用适配</strong> <code>build_prompts.py</code>：锁 <code>STYLE_LOCK</code> 风格后缀（保证每张都带本项目风格锚），把中文 <code>visualHint</code> 翻译为英文 SDXL prompt。</p>
+    <p><strong>③ 产出</strong>：每张图 = <code>visualHint(当天内容) + STYLE_LOCK(本项目风格)</code>，一致性由「锁」保证。</p>
+    <h3>visualHint → prompt 对照（Day15，本项目专属内容）</h3>
+    <p>输入：<code>一个孩子专注地写一个新字，桌上摊着成长记录本，旁边有家人鼓励的小卡片</code></p>
+    <p>输出：<code>a child focused on writing a new character, a growth journal open on the desk, a small encouraging card from family beside it, &lt;STYLE_LOCK 温暖亲子扁平插画 后缀&gt;</code></p>
   </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <h2>④ Day1–6 完整 Prompt 参考（风格锚）</h2>
-    <p class="sub">原样保留，作为 66 天系列视觉一致的基准</p>
-    <div class="card" style="overflow-x:auto">
-      <table>
-        <tr><th>Day</th><th>主题</th><th>Prompt 原文</th></tr>
-        <tr><td>1</td><td>学习能力</td><td>A young child sitting peacefully at a small wooden desk, absorbed in reading a picture book. Soft golden afternoon light streams through a window. Warm beiges, soft corals, sage green accents. Calm, nurturing, hopeful.</td></tr>
-        <tr><td>2</td><td>专注力</td><td>A young child deeply focused on completing colorful wooden puzzle blocks on the floor. Expression calm and absorbed. Soft natural light. Cream whites, soft lavender, warm beiges, gentle teal accents. Quiet concentration.</td></tr>
-        <tr><td>3</td><td>勇气</td><td>A young child standing at the edge of a small stepping stone path, looking ahead with a brave but slightly nervous expression. A parent's gentle hand on the child's shoulder. Warm sunrise colors: soft pinks, warm oranges, gentle yellows. Encouraging, supportive, hopeful.</td></tr>
-        <tr><td>4</td><td>坚持</td><td>A young child gently watering a small potted sprout on a windowsill. Soft morning light. The sprout is small but visibly growing. Child's expression gentle and patient. Soft sage green, warm beige, cream white, golden sunlight. Growth happens little by little.</td></tr>
-        <tr><td>5</td><td>独立</td><td>A young child proudly putting on their own shoes or tidying toys into a basket. Expression proud and happy. A parent nearby smiling gently, hands behind their back. Soft coral, warm beige, cream white, gentle sky blue. "I can do it myself!"</td></tr>
-        <tr><td>6</td><td>好奇心</td><td>A young child looking up at the sky with wide, curious eyes, pointing at a bird or a cloud. Expression full of wonder. Soft afternoon light, gentle blue sky and white clouds. Soft sky blue, warm beige, cream white, golden sunlight. Every question is the beginning of thinking.</td></tr>
-      </table>
-    </div>
+  <h2>5. 一线诊断（第一性原理找真瓶颈）</h2>
+  <div class="card">
+    <p>Day11 内容「没发出去」。表面是流水线问题，追问后发现<strong>真瓶颈在交付出口（小程序未备案，发布接口被限），不在出图/推送流水线本身</strong>。
+    修复优先级：先解决备案/出口，而非无谓优化已能跑的流水线。</p>
   </div>
-</section>
 
-<section>
-  <div class="wrap">
-    <h2>⑤ 产出示例（风格锚）</h2>
-    <p class="sub">全部由 SDXL 按风格库生成，66 天系列视觉一致，无人工逐张调参</p>
-    <div class="imgs">
-      <figure>
-        <img src="assets/day1-header.jpg" alt="day1 学习能力主题插画" />
-        <figcaption>Day 1 · 学习能力（风格基准）</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/day4-header.jpg" alt="day4 坚持主题插画" />
-        <figcaption>Day 4 · 坚持（同风格约束下的稳定产出）</figcaption>
-      </figure>
-    </div>
+  <h2>6. FDE 能力映射</h2>
+  <table>
+    <tr><th>FDE 能力</th><th>本项目证据</th></tr>
+    <tr><td>进现场摸真实需求</td><td>识别「66 张一致插画」才是真成本，而非单张出图</td></tr>
+    <tr><td>端到端 Forward Deploy</td><td>风格库→提取→调用适配→推送，全链路自己搭通</td></tr>
+    <tr><td>一线诊断 / 适配工具</td><td>Day11 第一性原理诊断 + 把风格沉淀成可调用库</td></tr>
+  </table>
+
+  <h2>7. 示例图（归属本项目：66 天幼小衔接训练营）</h2>
+  <div class="imgs">
+    <figure><img src="assets/day1-header.jpg" alt="Day1 开营主题插画" /><figcaption>Day1 开营 · 温暖亲子扁平风格</figcaption></figure>
+    <figure><img src="assets/day4-header.jpg" alt="Day4 识字主题插画" /><figcaption>Day4 识字 · 同风格一致</figcaption></figure>
   </div>
-</section>
+  <p style="font-size:13px">这两张仅作为「风格一致性」的视觉证据，属于训练营项目，不授权作为其他项目的风格参考。</p>
 
-<section>
-  <div class="wrap">
-    <h2>⑥ FDE 岗位能力映射</h2>
-    <p class="sub">为什么这是个 FDE 样本，而非普通「AI 生图」</p>
-    <div class="map">
-      <div class="m"><b>给业务方做适配工具（核心）</b><br/>把设计负责人脑子里的「风格感觉」翻译成结构化、可机器调用的风格库，让不懂 prompt 的运营也能稳定产出一致视觉。</div>
-      <div class="m"><b>进现场摸需求</b><br/>扎进内容生产现场，识别出「风格漂移 / 重复劳动」这个真痛点，而非上来就写脚本。</div>
-      <div class="m"><b>端到端落地</b><br/>风格定义 → 提取 → 适配 → 出图一条龙，是已跑通的可运行系统（66 天规划就绪、出图流水线实跑）。</div>
-      <div class="m"><b>把知识资产化</b><br/>把「人会写 prompt」的隐性能力，变成「库 + 脚本」可复用的显性资产。</div>
-    </div>
-    <div class="card" style="margin-top:18px">
-      <p><b>方法论（第一性原理）</b>：配图的<b>本质需求</b>是「一致的温暖亲子感」，不是「每天写一条新 prompt」。所以把<b>可变部分</b>（主题/动作，每天从内容提取）和<b>不变部分</b>（风格，锁死在库里）解耦——这正是 FDE 的迷你版：把专家知识沉淀成可复用资产，在关键时调用适配。</p>
-    </div>
+  <h2>8. 复用纪律（务必遵守）</h2>
+  <div class="card">
+    <p><span class="pill">✅ 可复用：方法论</span> 把一类设计语言沉淀成库 + 关键时锁风格后缀做调用适配。</p>
+    <p style="margin-top:8px"><span class="pill no">❌ 不可复用：具体细节</span> 本项目的「温暖亲子扁平插画」风格、训练营家长画像、66 天连续触达需求。换项目必须重新进现场定义其专属风格/客户/需求。</p>
   </div>
-</section>
 
-<footer>
-  <div class="wrap">
-    <p>风格提取库 · FDE 作品集展示页 ｜ 完整源（含 overview / deliverable 讲稿）见私有主库 <code>workbuddy-archive/showcase/style-extraction-library/</code></p>
-    <p style="margin-top:6px">所有插画由 SDXL 生成，无隐私内容，可公开展示。</p>
-  </div>
-</footer>
-
+  <footer>
+    FDE 作品集 · 本项目为独立案例，细节不可跨项目借用 · 仅展示方法论可迁移性
+  </footer>
+</div>
 </body>
 </html>
