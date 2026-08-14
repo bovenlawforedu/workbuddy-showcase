@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>测评模块 · MVP 瘦身 · FDE 作品集</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="back" href="index.html">← 返回作品集</a>
+    <div class="eyebrow">AI Native 落地 · 产品经理 / AI 产品设计</div>
+    <h1>测评模块：从「标准方案」到 MVP 瘦身</h1>
+    <p class="lead">我给自己写的 PRD + 技术设计做「双模型工作法」复审，推翻行业最佳实践的惯性，把 MVP 从「AI 报告云函数」瘦身到「客户端算分 + 模板报告」，上线周期从周级压到天级。</p>
+    <div class="badges"><span class="badge">第一性原理</span><span class="badge">马斯克五步</span><span class="badge">AI Native 落地</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <section>
+    <h2>1. 背景与问题</h2>
+    <p>在一个已有的 66 天内容营小程序里嵌入学情测评模块，验证漏斗：<code>内容页 → 测一测 → 家长代填 → 看报告 → 预约体验课</code>。真价值是「老师跟进促成体验课转化」，测评只是建立信任的手段。MVP 唯一要验证的假设是<strong>这条漏斗是否成立</strong>。</p>
+  </section>
+  <section>
+    <h2>2. 关键转折：双模型工作法复审（差异化亮点）</h2>
+    <h3>模型1 · 第一性原理 vs 类比思维</h3>
+    <p>第一版用「类比思维」套行业打法（分包 / 问卷 / 云函数出 AI 报告 / 埋点）。第一性原理拆解：物理级约束（微信主包 2MB、儿童数据受 PIPL、AI Key 不能进小程序）<strong>保留</strong>；但「MVP 是否必须收集儿童档案」「MVP 是否必须调用 AI」是<strong>可质疑</strong>的。落到事实：漏斗验证只需三件事——家长愿答（与 AI 无关）、答完看到「懂我孩子」的反馈（纯客户端算分 + 模板话术即可）、引导预约（与 AI 无关）。</p>
+    <h3>模型2 · 马斯克五步算法</h3>
+    <ul>
+      <li><strong>①质疑</strong>：16 题谁定的？→ 惯例，砍到 12；云函数 AI 报告？→ 前提被推翻；强制监护人弹窗？→ 恰是最大流失点，改内联勾选。</li>
+      <li><strong>②删除</strong>：砍掉云函数 + AI 报告、儿童档案集合、强制弹窗、报告配图、多余事件（8→4）。</li>
+      <li><strong>③简化</strong>：报告 = 4 维进度条 + 每维一句话洞察 + 30 天建议 + 双按钮，全客户端完成，零云函数。</li>
+      <li><strong>④加速</strong>：无云函数、无新集合、无 AI Key，几天内上线。</li>
+      <li><strong>⑤后期自动化</strong>：漏斗验证成功后再加 AI 叙事报告。</li>
+    </ul>
+  </section>
+  <section>
+    <h2>3. 瘦身结果</h2>
+    <table>
+      <tr><th>项</th><th>原方案</th><th>复审后</th></tr>
+      <tr><td>后端云函数</td><td>1</td><td><strong>0</strong></td></tr>
+      <tr><td>新增数据集合</td><td>4</td><td><strong>1（匿名）或 0</strong></td></tr>
+      <tr><td>AI 调用</td><td>是</td><td><strong>否（模板话术）</strong></td></tr>
+      <tr><td>儿童身份存储</td><td>是</td><td><strong>否</strong></td></tr>
+      <tr><td>合规 / 审核风险</td><td>中高</td><td><strong>低</strong></td></tr>
+      <tr><td>上线周期</td><td>周级</td><td><strong>天级</strong></td></tr>
+    </table>
+  </section>
+  <section>
+    <h2>4. 面试话术</h2>
+    <div class="quote">「我交付的不只是一份 PRD，而是对 PRD 本身的复盘。我会先问『这条要求的提出人是谁？是物理约束还是惯例？』惯例即可质疑。」</div>
+    <div class="quote">「MVP 的判据只有一条：能不能最快验证核心假设。AI 不是不能用，是<strong>不能过早用</strong>——漏斗没成立就先上 AI 报告引擎，等于在错误假设上堆复杂度。」</div>
+  </section>
+  <section>
+    <h2>FDE 岗位能力映射</h2>
+    <table>
+      <tr><th>FDE 能力</th><th>本项目证据</th></tr>
+      <tr><td>进现场摸需求（Echo）</td><td>进教育产品一线，先搞懂"现有流量在哪、转化目标是什么"再设计</td></tr>
+      <tr><td>Forward Deploy（端到端落地）</td><td>用双模型工作法把 MVP 落地瘦身——零云函数、天级上线</td></tr>
+      <tr><td>给业务方做适配</td><td>推翻行业最佳实践惯性，给 Founder 更轻的验证路径——FDE"砍掉过度建造"的角色</td></tr>
+    </table>
+  </section>
+</main>
+<footer class="site">布哥 · FDE 作品集 · <a href="index.html">返回</a></footer>
+</body>
+</html>

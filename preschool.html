@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>66 天幼小衔接训练营 · 内容+配图系统 · FDE 作品集</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="back" href="index.html">← 返回作品集</a>
+    <div class="eyebrow">真实项目 · 内容生产 + 配图系统</div>
+    <h1>66 天幼小衔接训练营 · 内容 + 配图系统</h1>
+    <p class="lead">一个真实项目：66 天训练营的「内容规划 + 插画配图 + 微信每日推送交付」。核心是识别"66 张风格一致插画"才是真成本，于是把设计语言沉淀成可复用库，并在关键时调用适配。</p>
+    <div class="badges"><span class="badge">独立项目</span><span class="badge">风格库沉淀</span><span class="badge">Day11 一线诊断</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <div class="note">
+    <strong>项目边界声明（重要）：</strong>本项目是一个<strong>独立项目</strong>，<strong>不是</strong>「设计总监风格库 / 风格提取库」（那是一个完全不同、尚未落地的项目构想）。本项目的风格、客户画像、客户需求<strong>只属于本项目</strong>，不可套用到其他项目。可跨项目复用的<strong>只有方法论逻辑</strong>。
+  </div>
+  <section>
+    <h2>1. 背景（真实项目是什么）</h2>
+    <p>一个 66 天幼小衔接训练营：每天给家长/孩子推送一篇主题内容（习惯养成、识字准备、情绪管理等），通过微信小程序 + 每日定时推送触达。核心生产痛点是——<strong>66 篇内容要配 66 张风格一致的插画</strong>，纯手工出图慢且风格漂移。</p>
+  </section>
+  <section>
+    <h2>2. 我做了什么（端到端落地）</h2>
+    <table>
+      <tr><th>环节</th><th>产物</th><th>作用</th></tr>
+      <tr><td>内容规划</td><td><code>content/planned/day*.json</code>（56 个 day）</td><td>每个 day 含 <code>visualHint</code>（中文视觉提示）</td></tr>
+      <tr><td>风格沉淀</td><td><code>style.md</code></td><td>把视觉风格定义成可复用规范（配色/光线/氛围/表情关键词库 + Day1–6 锚）</td></tr>
+      <tr><td>提取</td><td><code>extract_hints.py</code></td><td>从内容规划批量提取每个 day 的 <code>visualHint</code></td></tr>
+      <tr><td>关键时调用适配</td><td><code>build_prompts.py</code></td><td>锁风格后缀，把中文 <code>visualHint</code> 适配成英文 SDXL prompt</td></tr>
+      <tr><td>交付自动化</td><td><code>publish.js</code> + 云函数 + 微信每日推送</td><td>配图 → 写入 → 定时发布全链路</td></tr>
+      <tr><td>一线诊断</td><td><code>diagnosis-day11.md</code></td><td>定位「Day11 没完成」真因</td></tr>
+    </table>
+  </section>
+  <section>
+    <h2>3. 三个 FDE 能力</h2>
+    <h3>进现场摸需求（Echo）</h3>
+    <p>识别真痛点：不是「不会画」，是「66 张要一致、要每天稳定产出」。风格漂移 + 人工瓶颈才是成本。于是把「设计语言」从个人脑子里<strong>沉淀成可复用资产</strong>，让出图可规模化、可复现。</p>
+    <h3>端到端 Forward Deploy（Delta）</h3>
+    <p>把「风格库 + 提取 + 调用适配 + 推送」整个链路<strong>自己端到端搭起来并跑通</strong>，不是只写一份 PRD 交给别人。</p>
+    <h3>一线诊断</h3>
+    <p>Day11 内容「没发出去」。用第一性原理追问后发现：<strong>真瓶颈在交付出口（小程序未备案，发布接口被限），不在出图/推送流水线本身</strong>。这决定了修复优先级。</p>
+  </section>
+  <section>
+    <h2>4. 配图示例（脱敏）</h2>
+    <p class="meta">以下为训练营配图系统的两幅示例（已脱敏，仅展示风格一致性效果）：</p>
+    <div class="grid">
+      <div class="card"><h3>Day 1 头图</h3><img src="assets/day1-header.jpg" alt="Day1 头图示例" style="width:100%;border-radius:10px;border:1px solid var(--line)"></div>
+      <div class="card"><h3>Day 4 头图</h3><img src="assets/day4-header.jpg" alt="Day4 头图示例" style="width:100%;border-radius:10px;border:1px solid var(--line)"></div>
+    </div>
+  </section>
+  <section>
+    <h2>FDE 岗位能力映射</h2>
+    <table>
+      <tr><th>FDE 能力</th><th>本项目证据</th></tr>
+      <tr><td>进现场摸真实需求</td><td>识别「66 张一致插画」才是真成本，而非单张出图</td></tr>
+      <tr><td>端到端 Forward Deploy</td><td>风格库→提取→调用适配→推送，全链路自己搭通</td></tr>
+      <tr><td>一线调查 / 诊断 / 适配工具</td><td>Day11 第一性原理诊断 + 把风格沉淀成可调用库</td></tr>
+    </table>
+  </section>
+  <div class="note"><strong>关于「复用」的纪律：</strong>本项目的方法论（把一类设计语言沉淀成库、关键时锁风格后缀做调用适配）可迁移到「给设计总监做风格库沉淀」那种场景——<strong>但迁移的只能是逻辑，不是细节</strong>。设计总监的风格、客户、需求与训练营完全不同，必须重新进现场定义。</div>
+</main>
+<footer class="site">布哥 · FDE 作品集 · <a href="index.html">返回</a></footer>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>谈话录音 AI 归档流水线 · FDE 作品集</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="back" href="index.html">← 返回作品集</a>
+    <div class="eyebrow">本地 AI 系统 · 隐私优先 · 端到端 Forward Deploy</div>
+    <h1>谈话录音 AI 归档流水线</h1>
+    <p class="lead">把「线下谈话录音散落、无法检索」这个真实痛点，做成一条<strong>本地优先、隐私优先</strong>的 AI 流水线——音频入 → 双引擎转写 → 本地 LLM 结构化纪要 → 归档 → 同步。这是 FDE「把系统真正端到端搭起来跑通」的硬样本。</p>
+    <div class="badges"><span class="badge">进现场摸需求</span><span class="badge">Forward Deploy</span><span class="badge">一线诊断</span><span class="badge">隐私优先架构</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <section>
+    <h2>1. 背景与痛点（进现场识别，而非拍脑袋）</h2>
+    <p>线下谈话 / 通话录音散落在手机里，没有结构化归档和检索能力。现有录音转写服务<strong>都要上传到第三方服务器</strong>，不符合隐私需求；本地 Whisper 质量够用，但静音段有幻觉问题需要工程解决。</p>
+    <p>我的产品判断（进现场后做的，不是关起门来定）：</p>
+    <ul>
+      <li><strong>隐私优先路线</strong>：录音不经过任何云端 App 直传 Mac 本地处理，凭证不落盘（运行时加载）。</li>
+      <li><strong>三节点解耦架构</strong>：采集 → 处理 → 归档，各节点职责单一、可独立替换。</li>
+      <li><strong>为什么不用现成方案</strong>：现成服务都要上传第三方，不符合隐私约束；本地方案的真实卡点在静音幻觉，是工程问题而非不可用。</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>2. 我做了什么（端到端 Forward Deploy）</h2>
+    <p>不是写一份方案文档交给别人，而是<strong>自己把整条链路搭起来并跑通</strong>：</p>
+    <table>
+      <tr><th>文件</th><th>行数</th><th>职责</th></tr>
+      <tr><td><code>ai_pipeline.sh</code></td><td>464</td><td>主调度：参数解析、模型加载、转写双引擎回退、LLM 三级降级、归档输出</td></tr>
+      <tr><td><code>tingwu_transcribe.py</code></td><td>418</td><td>通义听悟完整集成：ROA 签名 + OSS 上传 + 任务轮询 + 智能纪要解析</td></tr>
+      <tr><td><code>smart_transcribe.py</code></td><td>83</td><td>静音感知分段转写：RMS 能量检测(VAD) 切分，规避 Whisper 静音幻觉</td></tr>
+      <tr><td><code>asr/hy_asr3_transcribe.py</code></td><td>95 / 159</td><td>本地 ASR 适配层 / 混合 ASR 引擎接入</td></tr>
+      <tr><td><code>audio_watcher.sh</code></td><td>61</td><td>监听新文件，触发流水线</td></tr>
+      <tr><td><code>cloud_sync.sh</code> / <code>ima_sync.py</code></td><td>32 / 135</td><td>归档同步到 WebDAV / 本地知识库</td></tr>
+      <tr><td><code>prompts/talk.md</code> · <code>call.md</code></td><td>—</td><td>两类来源的 LLM 纪要模板（8 板块标准结构）</td></tr>
+      <tr><td><code>app_server/</code></td><td>—</td><td>本地 Web UI，浏览 / 检索归档</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. 三个真问题（面试最值得讲）</h2>
+    <h3>① Whisper 静音段幻觉</h3>
+    <p>录音开头 7 秒静音触发 Whisper 输出幻觉文本并提前终止解码，后面真实语音全部丢失。根因是 Whisper 长静音已知行为 → 写 <code>smart_transcribe.py</code> 用能量检测切出纯语音段逐段喂 Whisper，跳过静音；段间留 0.5s 重叠防边界丢词。</p>
+    <h3>② 通义听悟 API 集成（无官方 SDK）</h3>
+    <p>阿里云 OpenAPI 用 ROA 签名（HMAC-SHA1），还需自己上传 OSS、生成签名 URL、轮询任务状态 → 手写 <code>tingwu_transcribe.py</code> 全链路（OSS PutObject / 签名 URL / ROA 签名 / 创建任务 / 轮询 / 下载解析 / 清理）。</p>
+    <h3>③ 本地小模型纪要质量不稳定</h3>
+    <p>qwen2.5-1.5b 会复读、输出客套话、拆散中文标题 → 在 <code>ai_pipeline.sh</code> 写大量后处理正则，强制 8 板块标准结构，兜底回填原始转写。</p>
+  </section>
+
+  <section>
+    <h2>4. 面试话术底稿</h2>
+    <div class="quote">「FDE 的交付物是能跑的系统，不是 PPT。这条流水线从采集到归档我全自己搭通，双引擎回退 + 三级降级保证它在真实环境不中断——这就是 Forward Deploy。」</div>
+    <div class="quote">「我做的第一个判断是隐私优先架构，而不是先堆功能。凭证不落盘、录音本地处理、自托管 WebDAV 备份——这是进现场识别出的硬约束。」</div>
+    <div class="quote">「手写阿里云 ROA 签名 + OSS 上传全链路，说明 FDE 进场常要在不依赖 SDK 的情况下接客户的系统——集成能力是硬通货。」</div>
+  </section>
+
+  <section>
+    <h2>FDE 岗位能力映射</h2>
+    <table>
+      <tr><th>FDE 能力</th><th>本项目证据</th></tr>
+      <tr><td>进现场摸需求（Echo）</td><td>识别「录音散落、无结构化、且隐私敏感」这个真实痛点，并据此定下隐私优先架构</td></tr>
+      <tr><td>Forward Deploy（端到端落地）</td><td>三节点流水线自己搭建并跑通，双引擎回退 + 三级降级保证真实环境可用</td></tr>
+      <tr><td>一线诊断 / 适配工具</td><td>静音幻觉、ROA 签名、小模型降级——进现场对着真实系统才暴露，给出可直接用的适配方案</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <div class="note"><strong>脱敏说明：</strong>本页仅含代码结构与方法论，<strong>不含任何真实录音 / 转录样本 / 个人信息 / 凭证</strong>。私人数据已在归档时排除。演示请用虚构或已授权样例音频。</div>
+    <p class="meta">技术栈：Bash（生产级大脚本）+ Python + whisper.cpp / qwen2.5-1.5b 本地推理 + 通义听悟 API + WebDAV + 本地 Web 服务</p>
+  </section>
+</main>
+<footer class="site">布哥 · FDE 作品集 · <a href="index.html">返回</a></footer>
+</body>
+</html>

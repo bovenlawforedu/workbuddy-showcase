@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palantir Ontology → AI Native 映射 · FDE 作品集</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="back" href="index.html">← 返回作品集</a>
+    <div class="eyebrow">方法论笔记 · AI Native 产品设计</div>
+    <h1>Palantir 方法论 → AI Native 产品设计</h1>
+    <p class="lead">系统拆解 Palantir 的核心工作方法论，并把它<strong>映射成 AI Native / Agent 产品设计的四层同构框架</strong>，同时与当下流行的 Zero-Token Design 建立理论同构。</p>
+    <div class="badges"><span class="badge">Ontology</span><span class="badge">FDE 冷启动</span><span class="badge">Zero-Token</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <section>
+    <h2>核心洞察（一句话）</h2>
+    <div class="quote">好的 AI Native Agent = <strong>Palantir Ontology（世界模型）+ FDE（冷启动）+ 受控 Action（安全边界）+ Zero-Token 哲学（把确定性留给系统，把判断留给模型）</strong>。</div>
+  </section>
+  <section>
+    <h2>四层映射（面试重点）</h2>
+    <table>
+      <tr><th>Palantir 原版</th><th>AI Native 翻译</th></tr>
+      <tr><td>本体论 Ontology</td><td>Agent 的持久「世界模型 / 状态层」，非每次重塞 prompt</td></tr>
+      <tr><td>前置部署工程师 FDE</td><td>Agent 的「冷启动 / onboarding」：人机共建 → 收敛自动化</td></tr>
+      <tr><td>Action + 权限</td><td>Tool-calling 的「安全边界」：受控动作，带权限/溯源/可撤回</td></tr>
+      <tr><td>人类在回路 HITL</td><td>按风险分级的「人审闸门」</td></tr>
+    </table>
+  </section>
+  <section>
+    <h2>与 Zero-Token Design 的同构</h2>
+    <p>把「确定性、可预计算」从 LLM 身上剥掉，模型只做不可替代的最小判断——Ontology 就是把「世界是什么样」固化成结构化状态，让日常调用 token 趋近于零。</p>
+  </section>
+  <section>
+    <h2>面试话术示例</h2>
+    <div class="quote">「我用 AI Agent 把 Palantir 的 Ontology / FDE 方法论映射到 AI Native 产品设计，并与 Zero-Token Design 建立同构。核心理念是『让模型当调度员而非 root，世界长在外部结构化状态里，安全边界由受控 Action 定义』。完整推导在作品集里。」</div>
+  </section>
+  <p class="meta">配套产出：<code>deliverable.md</code> — 完整方法论笔记（六段 Palantir 方法论 + 四层映射 + 设计检查清单）。</p>
+</main>
+<footer class="site">布哥 · FDE 作品集 · <a href="index.html">返回</a></footer>
+</body>
+</html>

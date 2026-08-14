@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>零售/玩具市场调研 · FDE 作品集</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="back" href="index.html">← 返回作品集</a>
+    <div class="eyebrow">FDE · 行业调研 + 数据诊断</div>
+    <h1>零售 / 玩具市场调研</h1>
+    <p class="lead">进零售与玩具行业一线，用公开情报 + 真实订单数据搭出「审计 → 指标 → 报告」管道，把"市场感觉"变成<strong>可复用、可更新的情报系统</strong>——FDE 的"进现场 + 部署可运行系统"。</p>
+    <div class="badges"><span class="badge">进现场摸数据</span><span class="badge">数据诊断</span><span class="badge">可复用管道</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <section>
+    <h2>1. 两个并行子项目</h2>
+    <ul>
+      <li><strong>益智玩具跨平台调研</strong>：国内（天猫/京东/抖音/小红书/1688）+ 跨境（Amazon / TikTok Shop）的选品、用户评价、竞品、趋势。</li>
+      <li><strong>电商业务健康度分析</strong>：用 UCI Online Retail 真实订单数据（54 万行）做业务诊断。</li>
+    </ul>
+  </section>
+  <section>
+    <h2>2. 我做了什么</h2>
+    <h3>① 益智玩具调研（做成"情报管道"而非一次性报告）</h3>
+    <p>5 维框架：选品/蓝海、用户评价/需求、竞品/竞店、趋势/季节性、跨平台对比。产出结构化 <code>data.json</code>（可直接喂 Excel / Tableau / BI）+ plotly 可视化报告。设计成<strong>可更新、可换品类复用</strong>——检索 query 一换就能套到新品类。</p>
+    <h3>② 电商业务健康度（真实数据诊断）</h3>
+    <ul>
+      <li><strong>审计</strong>：54 万行订单的字段完整性、异常值（Description 26.8% 缺失）核查。</li>
+      <li><strong>指标</strong>：月度 GMV / 订单 / AOV / 复购率 / 取消率 / 退款率。</li>
+      <li><strong>用户分层</strong>：RFM（最近购买 / 频次 / 金额）找出高价值与流失用户。</li>
+      <li><strong>报告</strong>：HTML 自动化报告，结论可直接给业务方。</li>
+    </ul>
+  </section>
+  <section>
+    <h2>3. 面试话术</h2>
+    <div class="quote">「FDE 进场常遇到'给我讲讲这个行业'。我做的不是写行业报告，是搭一个能持续产出自检结论的管道——审计、指标、报告一键出，业务方自己能跑。」</div>
+    <div class="quote">「数据诚实：54 万行里 Description 有 26.8% 缺失，我先审计再分析，而不是拿脏数据直接出图。FDE 的诊断力建立在'数据可信'上。」</div>
+    <div class="quote">「RFM 分层这种基础动作，价值在于把'高价值用户'从口号变成可触达的名单——进现场就是要拿到能直接用的东西。」</div>
+  </section>
+  <section>
+    <h2>FDE 岗位能力映射</h2>
+    <table>
+      <tr><th>FDE 能力</th><th>本项目证据</th></tr>
+      <tr><td>进现场摸数据（Echo）</td><td>直接拉真实订单数据 + 公开情报，自己算、自己看</td></tr>
+      <tr><td>一线诊断</td><td>用取消率(16%–19%)、退款率、复购率定位生意健康度；RFM 切分可运营分层</td></tr>
+      <tr><td>部署可运行系统</td><td>把调研做成"管道"（审计→指标→报告）而非一次性 PPT，换数据源即复用</td></tr>
+    </table>
+  </section>
+  <p class="meta">技术栈：Python 数据处理管道（审计/指标/RFM）、plotly 可视化、BI 就绪的结构化数据（data.json）。</p>
+</main>
+<footer class="site">布哥 · FDE 作品集 · <a href="index.html">返回</a></footer>
+</body>
+</html>
