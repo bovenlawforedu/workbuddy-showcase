@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SSS 投屏启蒙系统 · FDE 作品集</title>
+<title>SSS 投屏启蒙系统 · 小文哥 FDE 作品集</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -32,13 +32,12 @@
     <p>参数化 <code>episodes_per_day</code>(5) / <code>block_days</code>(14) / <code>counting_mode</code> / <code>stop_rule</code> / <code>block_order</code>，支持阶段级覆盖。<strong>规则变更只对「变更日之后」生效，历史打卡原样保留</strong>——关键的产品伦理决策。</p>
   </section>
   <section>
-    <h2>3. 面试话术</h2>
-    <div class="quote">「好需求不是列功能，是先钉死约束：操作者是谁（老人）、设备是什么（小米电视、无 Mac）、红线是什么（严格 5 集、版权）。约束清楚了，方案反而简单。」</div>
-    <div class="quote">「给老人设计 = 把复杂度藏起来。一键投屏背后是 AirPlay/DLNA 的差异，但老人只看到一个按钮。kiosk 防误触是非技术用户可用性的硬指标。」</div>
-    <div class="quote">「规则引擎我特意做了『变更只影响日后、历史保留』。很多产品偷懒全量重算，那是对用户历史的背叛。」</div>
+    <h2>3. 交付与结果</h2>
+    <p><strong>交付物：</strong>完整 App 需求与架构（Flutter + 原生投屏通道 + 本地 SQLite + 规则引擎 + kiosk 防误触），含两层科学分类体系与「已确认决策清单」。</p>
+    <p><strong>结果：</strong>把"选集→投屏→控量"这件对老人太复杂的事，压成一个按钮——背后是 AirPlay/DLNA 的差异，老人只看到一个动作。kiosk 防误触是非技术用户可用性的硬指标；规则引擎「变更只影响日后、历史保留」是对用户历史的尊重，也是蹲在现场才看得见的约束。好需求不是列功能，是先钉死约束：操作者是谁、设备是什么、红线是什么——约束清楚了，方案反而简单。</p>
   </section>
   <section>
-    <h2>FDE 岗位能力映射</h2>
+    <h2>与 FDE 岗位的对应</h2>
     <table>
       <tr><th>FDE 能力</th><th>本项目证据</th></tr>
       <tr><td>进现场摸需求（Echo）</td><td>进家庭真实场景（老人+幼儿+小米电视），把需求逐条钉死</td></tr>
@@ -48,6 +47,6 @@
   </section>
   <p class="meta">技术栈：Flutter + 原生投屏通道（iOS AirPlay / Android DLNA）+ 本地 SQLite + 本地视频目录。分发：iOS TestFlight、Android APK 侧载（个人工具）。</p>
 </main>
-<footer class="site">布哥 · FDE 作品集 · <a href="index.html">返回</a></footer>
+<footer class="site">小文哥 · FDE 作品集 · <a href="index.html">返回</a></footer>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>谈话录音 AI 归档流水线 · FDE 作品集</title>
+<title>谈话录音 AI 归档流水线 · 小文哥 FDE 作品集</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -18,9 +18,9 @@
 </header>
 <main class="wrap">
   <section>
-    <h2>1. 背景与痛点（进现场识别，而非拍脑袋）</h2>
+    <h2>1. 背景与约束（进现场识别，而非拍脑袋）</h2>
     <p>线下谈话 / 通话录音散落在手机里，没有结构化归档和检索能力。现有录音转写服务<strong>都要上传到第三方服务器</strong>，不符合隐私需求；本地 Whisper 质量够用，但静音段有幻觉问题需要工程解决。</p>
-    <p>我的产品判断（进现场后做的，不是关起门来定）：</p>
+    <p>进现场后定的产品判断（不是关起门来定）：</p>
     <ul>
       <li><strong>隐私优先路线</strong>：录音不经过任何云端 App 直传 Mac 本地处理，凭证不落盘（运行时加载）。</li>
       <li><strong>三节点解耦架构</strong>：采集 → 处理 → 归档，各节点职责单一、可独立替换。</li>
@@ -45,7 +45,7 @@
   </section>
 
   <section>
-    <h2>3. 三个真问题（面试最值得讲）</h2>
+    <h2>3. 三个关键工程问题（进现场才暴露）</h2>
     <h3>① Whisper 静音段幻觉</h3>
     <p>录音开头 7 秒静音触发 Whisper 输出幻觉文本并提前终止解码，后面真实语音全部丢失。根因是 Whisper 长静音已知行为 → 写 <code>smart_transcribe.py</code> 用能量检测切出纯语音段逐段喂 Whisper，跳过静音；段间留 0.5s 重叠防边界丢词。</p>
     <h3>② 通义听悟 API 集成（无官方 SDK）</h3>
@@ -55,17 +55,16 @@
   </section>
 
   <section>
-    <h2>4. 面试话术底稿</h2>
-    <div class="quote">「FDE 的交付物是能跑的系统，不是 PPT。这条流水线从采集到归档我全自己搭通，双引擎回退 + 三级降级保证它在真实环境不中断——这就是 Forward Deploy。」</div>
-    <div class="quote">「我做的第一个判断是隐私优先架构，而不是先堆功能。凭证不落盘、录音本地处理、自托管 WebDAV 备份——这是进现场识别出的硬约束。」</div>
-    <div class="quote">「手写阿里云 ROA 签名 + OSS 上传全链路，说明 FDE 进场常要在不依赖 SDK 的情况下接客户的系统——集成能力是硬通货。」</div>
+    <h2>4. 交付与结果</h2>
+    <p><strong>交付物：</strong>一条本地优先、隐私优先的完整流水线（生产级 bash 调度 + Python 集成 + 本地 Web UI + 提示词模板），已可运行；双引擎转写回退 + 三级 LLM 降级保证真实环境不中断；每份录音产出一份标准结构化档案（原始音频 + <code>raw.txt</code> + <code>record.md</code> + <code>marks.json</code> + <code>meta.json</code>），可在本地 Web UI 检索。</p>
+    <p><strong>结果：</strong>把"线下录音散落、无法检索"变成可检索、可回溯的归档能力；全程不落地云端凭证、不上传未加密录音——隐私约束在架构第一刀就锁死，而非事后补。这正是 FDE 与纯研发的分界：进的是有隐私约束、有真实噪声、不给你 SDK 的现场。</p>
   </section>
 
   <section>
-    <h2>FDE 岗位能力映射</h2>
+    <h2>与 FDE 岗位的对应</h2>
     <table>
       <tr><th>FDE 能力</th><th>本项目证据</th></tr>
-      <tr><td>进现场摸需求（Echo）</td><td>识别「录音散落、无结构化、且隐私敏感」这个真实痛点，并据此定下隐私优先架构</td></tr>
+      <tr><td>进现场摸需求（Echo）</td><td>识别「录音散落、无结构化、且隐私敏感」这个真实痛点，并据此定下隐私优先架构，而非套现成转写 SaaS</td></tr>
       <tr><td>Forward Deploy（端到端落地）</td><td>三节点流水线自己搭建并跑通，双引擎回退 + 三级降级保证真实环境可用</td></tr>
       <tr><td>一线诊断 / 适配工具</td><td>静音幻觉、ROA 签名、小模型降级——进现场对着真实系统才暴露，给出可直接用的适配方案</td></tr>
     </table>
@@ -76,6 +75,6 @@
     <p class="meta">技术栈：Bash（生产级大脚本）+ Python + whisper.cpp / qwen2.5-1.5b 本地推理 + 通义听悟 API + WebDAV + 本地 Web 服务</p>
   </section>
 </main>
-<footer class="site">布哥 · FDE 作品集 · <a href="index.html">返回</a></footer>
+<footer class="site">小文哥 · FDE 作品集 · <a href="index.html">返回</a></footer>
 </body>
 </html>
