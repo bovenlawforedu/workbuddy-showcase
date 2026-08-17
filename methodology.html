@@ -3,86 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>我的 FDE / ANC 理解 · 小文哥作品集</title>
+<title>我的工作方式 · 小文哥作品集</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <header class="site">
   <div class="wrap">
     <a class="back" href="index.html">← 返回作品集</a>
-    <div class="eyebrow">方法论认知 · 来自知识库「HA7CH · Lawted」的实践内化</div>
-    <h1>我对 FDE / ANC 的理解</h1>
-    <p class="lead">这一部分不是背书，而是我把 Lawted / HA7CH 的 FDE 体系内化成<strong>自己的实践形态</strong>。面试官看项目样本看的是"会不会做"，看这一页看的是"懂不懂底层"——这两件事要分开证明。</p>
-    <div class="badges"><span class="badge">OP-ANC</span><span class="badge">micro-Sprint</span><span class="badge">五层治理</span><span class="badge">数据安全四档</span></div>
+    <div class="eyebrow">方法论 · 我是怎么做的</div>
+    <h1>我怎么做 FDE</h1>
+    <p class="lead">FDE 对我来说不是"进现场写代码"，而是<strong>扎进真实业务现场，找到能被 AI 改变的运行环节，把它落成能跑的东西</strong>。这一页记录我反复验证后的工作方式。</p>
+    <div class="badges"><span class="badge">先验证再放大</span><span class="badge">小步闭环</span><span class="badge">沉淀可复用方法</span><span class="badge">数据安全先选型</span></div>
   </div>
 </header>
 <main class="wrap">
 
   <section>
-    <h2>1. FDE 到底是什么（我的定义）</h2>
-    <p>来自 HA7CH / Lawted 体系的核心判断：FDE 不是"进客户现场写代码"，而是<strong>进现场找到真实业务点，把 AI 嵌进企业的运行层</strong>。麦肯锡把 AI 当"董事会要新增的核心议程"，而 ANC 的判断更彻底——AI 最终不是议程，是<strong>企业未来的新运行系统</strong>（Context + Skills + 权限 + 审计 + 反馈）。</p>
-    <p>所以 FDE 的交付物是<strong>能跑的系统</strong>，不是方案文档；FDE 的现场感来自"有隐私约束、有真实噪声、不给你 SDK、还催你出结果"的真实环境。</p>
+    <h2>1. 我理解的 FDE</h2>
+    <p>很多项目把 AI 当成"新增功能"或"技术课题"来做，最后产出一份方案或一个 demo。我的经验是：AI 要真正产生价值，必须嵌进客户的日常运行层——它得替客户完成某个真实环节，而不是多一个玩具。</p>
+    <p>所以我的交付物优先是<strong>能跑的系统或流程</strong>：能转写的流水线、能出报告的调研模板、能一键投屏的家庭 kiosk、能复用的测评 Skill。方案文档只是副产品。</p>
   </section>
 
   <section>
-    <h2>2. 我的实践形态：OP-ANC（一人公司版 ANC）</h2>
-    <p>Lawted 跑的是 team-level ANC（多 ANP 协作、48 小时驻场、客户付 5–50 万）。我不照搬，而是把它缩放到"一人体 + &lt;5 小时/周"的现实约束——我把它叫 <strong>One-Person ANC（OP-ANC）</strong>。几个关键再定义：</p>
+    <h2>2. 我的交付节奏：先跑通，再沉淀，再复用</h2>
+    <p>我不会一上来就做大而全的规划。习惯先把一个真实业务点拆到最小闭环，跑通后再扩展。</p>
     <table>
-      <tr><th>Lawted 原概念</th><th>我的缩放</th><th>为什么</th></tr>
-      <tr><td>48 小时驻场 Sprint</td><td>4 小时周末 micro-Sprint</td><td>我没有驻场条件，但节奏逻辑相同：先找到真实业务点</td></tr>
-      <tr><td>多 ANP 组织成公司</td><td>自我 / 客户 / 家庭 三套 context，共用一套 skill 库</td><td>我只有一个人，但跨域复用同一套 skill</td></tr>
-      <tr><td>飞轮：知识→Skill→自动化</td><td>私有经验→可复用 Skill→下次 10× 快</td><td>交付的副产品是 skill，复用降低下次成本</td></tr>
-      <tr><td>团队规模 / 产线</td><td><strong>关键指标 = skill 复用次数</strong></td><td>一人公司不看团队规模，看资产是否真被复用</td></tr>
-      <tr><td>企业级 50 万合同</td><td>几千–几万小单也合理</td><td>早期客户愿付少，这是阶段，不是降级</td></tr>
+      <tr><th>阶段</th><th>动作</th><th>产出</th></tr>
+      <tr><td>第 1 周</td><td>选一个真实业务点，跑通 AI 辅助全流程</td><td>验证报告：原耗时 vs AI 耗时、字段可用率、人工修正项</td></tr>
+      <tr><td>第 2 周</td><td>把验证过的步骤封装成可复用模板 / Skill</td><td>可复用模板 + 权限边界清单 + 版本记录</td></tr>
+      <tr><td>第 3–4 周</td><td>在第二个业务点复用，验证跨场景稳定性</td><td>修正率是否下降、交付速度是否提升</td></tr>
     </table>
-    <div class="callout">我不做 AI 培训 / 训练营（那是 HA7CH 在做的），我是实操者不是 KOL。我也不硬上"48 小时 Sprint"——节奏不匹配会崩。OPC（一人公司）本身就是董事会 + 管理层 + 一线，所以我用"确认当前在哪个阶段"替代"选一种定位"。</div>
+    <div class="callout">我的判断标准很简单：同样的活，下次能不能更快、更稳、更少人工返工。能，就说明这个 Skill 成立了；不能，就回到验证阶段找原因。</div>
   </section>
 
   <section>
-    <h2>3. 我的交付节奏：micro-Sprint（≤5hr/周）</h2>
-    <p>把 48 节奏缩放到个人：48 小时验证 → 48 天形成能力 → 48 周重构公司。我的版本：</p>
+    <h2>3. 我的现场工作法</h2>
     <table>
-      <tr><th>周</th><th>动作</th><th>产出</th></tr>
-      <tr><td>第 1 周（2hr）</td><td>48 小时验证：选一个真实业务点，跑通 AI 辅助全流程</td><td>验证报告：原耗时 vs AI 耗时、字段可用率、人工修正项</td></tr>
-      <tr><td>第 2 周（2hr）</td><td>48 天起步：把验证沉淀为 Context + Skill + 反馈</td><td>可复用 Skill 模板 + Agent 权限边界清单</td></tr>
-      <tr><td>第 3–4 周（1hr/周）</td><td>48 天深化：在第二个业务点复用，验证跨场景</td><td>修正率是否下降、交付速度是否提升</td></tr>
+      <tr><th>原则</th><th>我的做法</th></tr>
+      <tr><td>先听后动</td><td>不拿现成模板硬套，先和客户一起把真实约束列清楚：数据能不能出境、有没有合规要求、关键决策人是谁、失败成本有多高。</td></tr>
+      <tr><td>小步验证</td><td>复杂任务先拆成 2 小时能跑完的最小闭环，确认有价值再继续投入，而不是憋大招。</td></tr>
+      <tr><td>留回退</td><td>关键交付节点必须有人工确认；AI 输出异常要能回滚；敏感数据泄露有响应路径。</td></tr>
+      <tr><td>沉淀技能</td><td>每次交付的副产品是一套可复用的方法、提示词或检查清单，降低下次同类任务的成本。</td></tr>
     </table>
   </section>
 
   <section>
-    <h2>4. 五层治理（压缩版，接单即生效）</h2>
+    <h2>4. 我的安全与治理习惯</h2>
+    <p>数据安全对我来说不是"安全不安全"的判断题，而是<strong>怎么运的选型题</strong>。进现场前往往不知道要保护什么，所以第一次沟通我就会问客户：数据能否出境、能否上云、有没有行业合规要求。选型确定后写进工作说明书，避免后期扯皮。</p>
     <table>
-      <tr><th>层</th><th>对我意味着</th><th>落地动作</th></tr>
-      <tr><td>Context 治理</td><td>知识资产边界</td><td>明确哪些客户资料可进外部模型、哪些必须留本地 / 专属环境</td></tr>
-      <tr><td>Skills 治理</td><td>交付方法论</td><td>把反复出现的交付步骤封装为 Skill 模板，保留版本记录</td></tr>
-      <tr><td>Agent 权限</td><td>Agent 能替我做什么</td><td>细化到：能读哪些文档、调哪些系统、发哪些消息、多少钱以下自动执行</td></tr>
-      <tr><td>责任治理</td><td>我是 Owner + DRI</td><td>AI 辅助决策，但我对客户交付负最终责任——这条不能外包给 AI</td></tr>
-      <tr><td>异常升级</td><td>止损机制</td><td>关键交付前必须人工确认；异常输出必须回滚；敏感数据泄露立即响应</td></tr>
+      <tr><th>项目</th><th>我的默认做法</th></tr>
+      <tr><td>数据存储</td><td>客户资料优先用境内云，不默认落境外服务。</td></tr>
+      <tr><td>模型算力</td><td>默认境内模型；如客户允许用海外模型，切换前明确告知。</td></tr>
+      <tr><td>日志训练</td><td>所有模型 API 调用关闭"用于训练"开关。</td></tr>
+      <tr><td>客户敏感数据</td><td>财务数据、合同条款等敏感内容在本地环境处理，不进云端模型。</td></tr>
+      <tr><td>权限</td><td>Agent 只能读任务相关数据，不能访问其他客户资料。</td></tr>
     </table>
   </section>
 
   <section>
-    <h2>5. 数据安全：四档菜单 + 我的默认档位</h2>
-    <p>核心原则：数据安全不是判断题（安不安全），是<strong>工程选型题</strong>（怎么运）。进现场前你甚至不知道要保护什么——正确顺序是先找到任务，再定数据。我接单的标准动作：第一次沟通就问客户"数据能否出境、能否上云、有无行业合规要求"，再从四档菜单选一档，把成本 / 周期 / 能力差异讲清楚，写进工作说明书。</p>
+    <h2>5. 我用来约束自己的五层清单</h2>
     <table>
-      <tr><th>项目</th><th>我的默认档位</th></tr>
-      <tr><td>数据存储</td><td>境内云（第二档）：客户资料用 ima / 腾讯云等境内服务，不存境外</td></tr>
-      <tr><td>模型算力</td><td>境内模型为主；如客户允许用 Claude / GPT，切换但告知客户</td></tr>
-      <tr><td>日志训练</td><td>关闭数据训练：所有模型 API 调用关闭"用于训练"</td></tr>
-      <tr><td>客户敏感数据</td><td>本地处理：财务数据、合同条款等敏感内容在本地环境，不进云端模型</td></tr>
-      <tr><td>权限</td><td>最小权限：Agent 只能读任务相关数据，不能访问其他客户资料</td></tr>
+      <tr><th>层</th><th>落地动作</th></tr>
+      <tr><td>Context 边界</td><td>明确哪些客户资料可进外部模型、哪些必须留本地 / 专属环境。</td></tr>
+      <tr><td>Skills 沉淀</td><td>把反复出现的交付步骤封装为模板，保留版本记录。</td></tr>
+      <tr><td>Agent 权限</td><td>细化到：能读哪些文档、调哪些系统、发哪些消息、多少钱以下自动执行。</td></tr>
+      <tr><td>责任边界</td><td>AI 辅助决策，但我对客户交付负最终责任——这条不能外包给 AI。</td></tr>
+      <tr><td>异常升级</td><td>关键交付前必须人工确认；异常输出必须回滚；敏感数据泄露立即响应。</td></tr>
     </table>
   </section>
 
   <section>
-    <h2>6. 三组指标自检（每次交付后问自己）</h2>
+    <h2>6. 每次交付后我会问自己的三组问题</h2>
     <table>
       <tr><th>维度</th><th>自检问题</th></tr>
       <tr><td>能力积累</td><td>上次交付的 Context 和修正，有没有沉淀成 Skill？同样的活下次能不能更快？</td></tr>
       <tr><td>治理</td><td>Agent 权限边界写清楚了吗？关键交付节点有我的人工确认吗？</td></tr>
-      <tr><td>组织结构</td><td>有没有因为 AI 减少不必要的协调？决策是不是更接近客户现场了？</td></tr>
+      <tr><td>客户价值</td><td>这个交付有没有让客户某个真实环节变快、变准、变便宜？有没有减少不必要的协调？</td></tr>
     </table>
-    <div class="note"><strong>与作品集的关系：</strong>上面 8 个样本，每一个都是这套认知的"现场演练"——谈话录音系统对应 Context / 责任治理与数据安全；测评 MVP 瘦身对应"能力积累"与删冗余；抖音 / 玩具调研对应 Echo 与"进现场"。认知与实践是一体的。</div>
+    <div class="note"><strong>与作品集的关系：</strong>下面 8 个样本都是这套工作方式的现场演练——谈话录音系统对应隐私边界与责任治理；测评 MVP 瘦身对应"先验证再放大"；抖音 / 玩具调研对应"沉淀可复用方法"。</div>
   </section>
 
 </main>
