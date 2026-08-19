@@ -1,0 +1,75 @@
+<svg viewBox="0 0 680 460" width="100%" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>B1 层平面功能落位与动线</title>
+<desc>B1 层营销核心层：营销动线、归家礼序、会所体验三区分布与面积</desc>
+<defs>
+<marker id="a1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+<marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text x="30" y="30" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="500" fill="#2c2c2a">B1 层（-1F）· 平面功能落位与动线 · 合计 1717㎡</text>
+<text x="30" y="50" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#5f5e5a">蓝=营销动线 暖橙=归家礼序 绿=会所体验 灰=交通/后勤 —— 面积暂定，以 CAD 1:1 为准</text>
+
+<!-- 楼王地下大堂 + 光厅 归家礼序带（底部横带） -->
+<rect x="30" y="350" width="180" height="80" rx="8" fill="#faece7" stroke="#d85a30" stroke-width="1.6"/>
+<text x="120" y="380" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="500" fill="#993c1d" text-anchor="middle">楼王地下大堂 78㎡</text>
+<text x="120" y="400" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#993c1d" text-anchor="middle">光的前奏 · 端墙光缝</text>
+<rect x="230" y="350" width="200" height="80" rx="8" fill="#faece7" stroke="#d85a30" stroke-width="2.4"/>
+<text x="330" y="380" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="500" fill="#993c1d" text-anchor="middle">★ 地下光厅 114㎡</text>
+<text x="330" y="400" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#993c1d" text-anchor="middle">归家精神高潮 · 天井光柱+水景</text>
+
+<!-- 楼王会所 -1F 496（右上大块） -->
+<rect x="450" y="60" width="200" height="370" rx="8" fill="#eaf3de" stroke="#639922" stroke-width="1.6"/>
+<text x="550" y="230" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="500" fill="#27500a" text-anchor="middle">楼王会所 496㎡</text>
+<text x="550" y="252" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#27500a" text-anchor="middle">院居 · 围合三席</text>
+<text x="550" y="270" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#27500a" text-anchor="middle">客厅席/茶席/影音席</text>
+
+<!-- -1F 接待大堂 249 -->
+<rect x="30" y="60" width="200" height="130" rx="8" fill="#e6f1fb" stroke="#378add" stroke-width="1.6"/>
+<text x="130" y="115" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="500" fill="#0c447c" text-anchor="middle">-1F 接待大堂 249㎡</text>
+<text x="130" y="137" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#0c447c" text-anchor="middle">展卷起 · 艺术玻璃屏风</text>
+<text x="130" y="155" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#0c447c" text-anchor="middle">光井侧窗引自然光</text>
+
+<!-- 沙盘 88 -->
+<rect x="250" y="60" width="180" height="110" rx="8" fill="#e6f1fb" stroke="#378add" stroke-width="2"/>
+<text x="340" y="105" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="500" fill="#0c447c" text-anchor="middle">沙盘区 88㎡</text>
+<text x="340" y="127" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#0c447c" text-anchor="middle">主展台 · 抬升450mm</text>
+<text x="340" y="145" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#0c447c" text-anchor="middle">顶部线性光带</text>
+
+<!-- 洽谈 433 -->
+<rect x="250" y="180" width="180" height="160" rx="8" fill="#e6f1fb" stroke="#378add" stroke-width="1.6"/>
+<text x="340" y="245" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="500" fill="#0c447c" text-anchor="middle">洽谈区 433㎡</text>
+<text x="340" y="267" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#0c447c" text-anchor="middle">展卷 · 半透玻璃隔断</text>
+<text x="340" y="285" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#0c447c" text-anchor="middle">盖碗茶文化吧台</text>
+<text x="340" y="303" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#0c447c" text-anchor="middle">最大单区 · 营销主戏</text>
+
+<!-- 小剧场 98 + 健身/更衣 161（左上） -->
+<rect x="30" y="200" width="95" height="140" rx="8" fill="#eaf3de" stroke="#639922" stroke-width="1.6"/>
+<text x="77" y="255" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="500" fill="#27500a" text-anchor="middle">小剧场</text>
+<text x="77" y="273" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#27500a" text-anchor="middle">98㎡</text>
+<text x="77" y="295" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#27500a" text-anchor="middle">竹影幕墙</text>
+<rect x="135" y="200" width="95" height="140" rx="8" fill="#eaf3de" stroke="#639922" stroke-width="1.6"/>
+<text x="182" y="255" font-family="Helvetica,Arial,sans-serif" font-size="11" font-weight="500" fill="#27500a" text-anchor="middle">健身/更衣</text>
+<text x="182" y="273" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#27500a" text-anchor="middle">161㎡</text>
+<text x="182" y="295" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#27500a" text-anchor="middle">光井侧窗</text>
+
+<!-- 垂直交通（1F↔B1） -->
+<rect x="420" y="60" width="22" height="370" rx="4" fill="#d9d6cd" stroke="#b4b2a9" stroke-width="1"/>
+<text x="431" y="250" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#66665f" text-anchor="middle" transform="rotate(-90 431 250)">扶梯/楼梯 1F↔B1</text>
+
+<!-- 动线：营销动线 接待→沙盘→洽谈 -->
+<path d="M 130 190 L 130 200 L 250 115" fill="none" stroke="#d85a30" stroke-width="2" marker-end="url(#a1)"/>
+<path d="M 340 170 L 340 180" fill="none" stroke="#d85a30" stroke-width="2" marker-end="url(#a1)"/>
+<!-- 归家动线 地下大堂→光厅→会所 -->
+<path d="M 210 390 L 228 390" fill="none" stroke="#0c447c" stroke-width="2" marker-end="url(#a2)"/>
+<path d="M 430 390 L 448 390" fill="none" stroke="#0c447c" stroke-width="2" marker-end="url(#a2)"/>
+<path d="M 330 430 L 330 440 L 550 440 L 550 432" fill="none" stroke="#0c447c" stroke-width="2" marker-end="url(#a2)"/>
+<!-- 会所体验动线 洽谈→会所 -->
+<path d="M 432 300 L 448 300" fill="none" stroke="#639922" stroke-width="1.8" marker-end="url(#a2)"/>
+
+<!-- 图例 -->
+<rect x="30" y="72" width="0" height="0" fill="none"/>
+<text x="34" y="430" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#444441">图例：</text>
+<rect x="72" y="422" width="12" height="12" fill="#e6f1fb" stroke="#378add" stroke-width="1"/><text x="90" y="432" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#444441">营销动线</text>
+<rect x="160" y="422" width="12" height="12" fill="#faece7" stroke="#d85a30" stroke-width="1"/><text x="178" y="432" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#444441">归家礼序</text>
+<rect x="248" y="422" width="12" height="12" fill="#eaf3de" stroke="#639922" stroke-width="1"/><text x="266" y="432" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#444441">会所体验</text>
+<rect x="336" y="422" width="12" height="12" fill="#d9d6cd" stroke="#b4b2a9" stroke-width="1"/><text x="354" y="432" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#444441">交通/后勤</text>
+</svg>

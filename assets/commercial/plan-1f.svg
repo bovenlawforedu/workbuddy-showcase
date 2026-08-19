@@ -1,0 +1,58 @@
+<svg viewBox="0 0 680 400" width="100%" xmlns="http://www.w3.org/2000/svg" role="img">
+<title>1F 层平面功能落位与动线</title>
+<desc>1F 层入院/归家层：接待大堂、楼王会所上层、儿童区、太太下午茶、球场概念</desc>
+<defs>
+<marker id="b1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></marker>
+</defs>
+<text x="30" y="30" font-family="Helvetica,Arial,sans-serif" font-size="15" font-weight="500" fill="#2c2c2a">1F 层 · 平面功能落位与动线 · 合计 1022㎡</text>
+<text x="30" y="50" font-family="Helvetica,Arial,sans-serif" font-size="12" fill="#5f5e5a">蓝=入院/营销 暖橙=归家礼序 绿=会所/亲子 灰虚线=球场（仅概念）</text>
+
+<!-- 接待大堂 165（中央） -->
+<rect x="170" y="90" width="200" height="150" rx="8" fill="#e6f1fb" stroke="#378add" stroke-width="2"/>
+<text x="270" y="155" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="500" fill="#0c447c" text-anchor="middle">1F 接待大堂 165㎡</text>
+<text x="270" y="177" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#0c447c" text-anchor="middle">入院序厅 · 竖向天井光缝</text>
+<text x="270" y="195" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#0c447c" text-anchor="middle">深色石材基座+木格栅</text>
+<text x="270" y="213" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#0c447c" text-anchor="middle">进门前先见光</text>
+
+<!-- 楼王会所 1F 451（右侧大块） -->
+<rect x="400" y="60" width="250" height="240" rx="8" fill="#eaf3de" stroke="#639922" stroke-width="1.6"/>
+<text x="525" y="165" font-family="Helvetica,Arial,sans-serif" font-size="13" font-weight="500" fill="#27500a" text-anchor="middle">楼王会所 451㎡</text>
+<text x="525" y="187" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#27500a" text-anchor="middle">上层空中院居</text>
+<text x="525" y="205" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#27500a" text-anchor="middle">酒廊/书房/观景茶室</text>
+<text x="525" y="223" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#27500a" text-anchor="middle">与 -1F 会所光井楼梯垂直联动</text>
+
+<!-- 儿童区 105（左下） -->
+<rect x="30" y="200" width="120" height="100" rx="8" fill="#eaf3de" stroke="#639922" stroke-width="1.6"/>
+<text x="90" y="240" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="500" fill="#27500a" text-anchor="middle">儿童区 105㎡</text>
+<text x="90" y="262" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#27500a" text-anchor="middle">圆角材质 · 软木地面</text>
+<text x="90" y="280" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#27500a" text-anchor="middle">亲子体验</text>
+
+<!-- 太太下午茶 81（左上） -->
+<rect x="30" y="60" width="120" height="120" rx="8" fill="#eaf3de" stroke="#639922" stroke-width="1.6"/>
+<text x="90" y="105" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="500" fill="#27500a" text-anchor="middle">太太下午茶 81㎡</text>
+<text x="90" y="127" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#27500a" text-anchor="middle">窗边茶席</text>
+<text x="90" y="145" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#27500a" text-anchor="middle">盖碗茶文化当代转译</text>
+<text x="90" y="163" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#27500a" text-anchor="middle">卡座围合 · 高端社交</text>
+
+<!-- 球场 220 概念（底部横带虚线） -->
+<rect x="170" y="300" width="480" height="70" rx="8" fill="none" stroke="#b4b2a9" stroke-width="1.6" stroke-dasharray="6 4"/>
+<text x="410" y="335" font-family="Helvetica,Arial,sans-serif" font-size="12" font-weight="500" fill="#888780" text-anchor="middle">球场 220㎡（仅概念设计 · 不落地）</text>
+<text x="410" y="353" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#888780" text-anchor="middle">光井语言概念草图延续 · 不进成本</text>
+
+<!-- 垂直交通 -->
+<rect x="390" y="90" width="16" height="150" rx="3" fill="#d9d6cd" stroke="#b4b2a9" stroke-width="1"/>
+<text x="398" y="165" font-family="Helvetica,Arial,sans-serif" font-size="9" fill="#66665f" text-anchor="middle" transform="rotate(-90 398 165)">扶梯/楼梯 1F↔B1</text>
+
+<!-- 动线：入院 入口→大堂 -->
+<path d="M 60 40 L 60 75 L 170 145" fill="none" stroke="#d85a30" stroke-width="2" marker-end="url(#b1)"/>
+<path d="M 270 240 L 270 300" fill="none" stroke="#0c447c" stroke-width="2" marker-end="url(#b1)"/>
+<path d="M 398 165 L 400 165" fill="none" stroke="#0c447c" stroke-width="1.8" marker-end="url(#b1)"/>
+<path d="M 150 130 L 168 130" fill="none" stroke="#639922" stroke-width="1.8" marker-end="url(#b1)"/>
+
+<!-- 图例 -->
+<text x="34" y="392" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#444441">图例：</text>
+<rect x="72" y="384" width="12" height="12" fill="#e6f1fb" stroke="#378add" stroke-width="1"/><text x="90" y="394" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#444441">入院/营销</text>
+<rect x="160" y="384" width="12" height="12" fill="#faece7" stroke="#d85a30" stroke-width="1"/><text x="178" y="394" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#444441">归家礼序</text>
+<rect x="248" y="384" width="12" height="12" fill="#eaf3de" stroke="#639922" stroke-width="1"/><text x="266" y="394" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#444441">会所/亲子</text>
+<rect x="336" y="384" width="12" height="12" fill="none" stroke="#b4b2a9" stroke-width="1.5" stroke-dasharray="4 3"/><text x="354" y="394" font-family="Helvetica,Arial,sans-serif" font-size="10" fill="#444441">概念/后勤</text>
+</svg>
