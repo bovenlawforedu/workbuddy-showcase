@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>企业内飞书智能客服机器人（RAG 原型） · 罗博文 Eric AI Product Builder 作品集</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="back" href="index.html">← 返回作品集</a>
+    <div class="eyebrow">0-1 AI 系统 · RAG 不幻觉原型</div>
+    <h1>企业内飞书智能客服机器人（RAG 原型）</h1>
+    <p class="lead">给企业内部做飞书 <code>@机器人</code>：员工基于公司私有资料（产品手册 / 售后政策 / FAQ）提问，机器人只依据私有资料作答、不幻觉、每条带引用；答不出的高频问题自动上报，补完资料后自动下发当初提问的员工。已做成一个面试官易看、非技术也能看懂的可交互 Demo + 架构图 + 静态展示页。</p>
+    <div class="badges"><span class="badge">RAG 系统</span><span class="badge">不幻觉</span><span class="badge">飞书 OpenAPI</span><span class="badge">零依赖可交付</span></div>
+    <p style="margin-top:16px">
+      <a class="tag-link" href="https://bovenlawforedu.github.io/enterprise-feishu-cs-bot/" target="_blank" rel="noopener">▶ 在线 Demo / 展示页</a>
+      &nbsp;&nbsp;
+      <a class="tag-link" href="https://github.com/bovenlawforedu/enterprise-feishu-cs-bot" target="_blank" rel="noopener">⌨ 公开仓库</a>
+    </p>
+  </div>
+</header>
+<main class="wrap">
+  <div class="note">
+    <strong>项目边界声明（重要）：</strong>本项目是企业内部「智能客服」方向的 <strong>RAG 原型 / 面试作品</strong>，核心交付是可交互 Demo + 架构图 + 静态展示页，而非只交代码。内部材料（FDE 计划 / 演示稿 / 客户沟通）不进公开仓库。
+  </div>
+  <section>
+    <h2>1. 背景（要解决什么）</h2>
+    <p>企业资料散落在 Word / PDF / 网页里，员工遇到产品、售后、政策类问题找不到答案，只能到处问人。直接调大模型又会编造、且私有资料出域有合规风险。于是选 <strong>RAG（检索增强生成）</strong> 而非裸调大模型：只依据私有资料作答、可控引用、资料隔离不出域。</p>
+  </section>
+  <section>
+    <h2>2. 我做了什么（端到端落地）</h2>
+    <table>
+      <tr><th>环节</th><th>产物</th><th>作用</th></tr>
+      <tr><td>检索</td><td>中文 bigram 分词 + BM25</td><td>解决单字 BM25 误命中，把可答(21+)与不可答(3–6)分离，<code>MIN_SCORE=10</code></td></tr>
+      <tr><td>内容护栏</td><td><code>guard.py</code></td><td>无信源仍硬答 → 问"联系谁"但资料无联系人时拒答并上报</td></tr>
+      <tr><td>身份识别</td><td>飞书 open_id → 通讯录 → 岗位映射</td><td>免手动选岗，按岗位自动识别与改写提问</td></tr>
+      <tr><td>多格式解析</td><td>pypdf + python-docx + stdlib HTMLParser</td><td>避开解析依赖地狱，统一抽私有资料</td></tr>
+      <tr><td>可交付运行</td><td>零依赖 Web 服务 <code>python app.py</code> → localhost:8000</td><td>预构建 <code>index.json</code> + 标准库 <code>http.server</code>，任意 Python3 一键可跑；LLM 可插拔</td></tr>
+      <tr><td>未答闭环</td><td>高频未答看板 + 自动下发</td><td>答不出的高频问题上报，补完资料后自动下发当初提问员工</td></tr>
+    </table>
+  </section>
+  <section>
+    <h2>3. 三个关键能力</h2>
+    <h3>不幻觉三层防御</h3>
+    <p>单字 BM25 误命中 → 中文 bigram 分词；无信源仍硬答 → <code>guard.py</code> 内容护栏拒答；身份需手动选岗 → 飞书 open_id 自动映射。黄金集评测 <strong>12/12 = 100%</strong> 不幻觉准确率。</p>
+    <h3>面向非技术受众的双轨交付</h3>
+    <p>Web 行为模拟器（主交付，面试官/非技术直接看）+ 真实飞书接入代码（技术附件），把"能跑"翻译成任何人都能看懂的演示。</p>
+    <h3>高频未答闭环的产品思维</h3>
+    <p>机器人答不出的问题不是终点：自动上报成看板，补完资料后把答案下发回当初提问的员工——把"客服机器人"做成持续变聪明的系统，而不只是一次性问答。</p>
+  </section>
+  <section>
+    <h2>4. 交付与结果</h2>
+    <p><strong>交付物：</strong>零依赖 Web 服务（飞书 <code>@机器人</code> 行为模拟器）、自动身份识别 / 模糊提问按岗改写 / 不幻觉拒答 / 闭环下发 全验证、静态展示页（架构图 + 7 段真实对话）、真实飞书接入代码 <code>feishu_bot.py</code>、公开仓库与 GitHub Pages。</p>
+    <p><strong>结果：</strong>黄金集评测 12/12 = 100% 不幻觉准确率；私有资料隔离不出域、零三方依赖保证任意环境一键可跑；把"企业智能客服"这个抽象需求，落成可演示、可验证、可交付的原型。</p>
+  </section>
+  <section>
+    <h2>与 AI Product Builder / FDE 岗位的对应</h2>
+    <table>
+      <tr><th>FDE / Builder 能力</th><th>本项目证据</th></tr>
+      <tr><td>进现场摸真实需求</td><td>识别"资料散落、员工找不到答案"是真痛点，而非堆一个聊天框</td></tr>
+      <tr><td>端到端 Forward Deploy</td><td>检索→护栏→识别→解析→可交付运行→未答闭环，全链路自己搭通</td></tr>
+      <tr><td>安全与治理前置</td><td>RAG 资料隔离不出域、不幻觉三层防御、私有资料合规</td></tr>
+      <tr><td>面向受众的交付</td><td>双轨交付：非技术看 Demo、技术看代码，降低沟通成本</td></tr>
+    </table>
+  </section>
+  <div class="note"><strong>关于「复用」的纪律：</strong>本项目的"不幻觉三层防御 / 闭环下发 / 双轨交付"是<strong>方法论逻辑</strong>，可迁移到任意企业知识问答场景；但具体的资料、岗位、业务语言只属于本案例，换项目必须重新进现场定义。</div>
+  <p style="margin-top:20px">
+    <a class="tag-link" href="https://bovenlawforedu.github.io/enterprise-feishu-cs-bot/" target="_blank" rel="noopener">▶ 在线 Demo / 展示页</a>
+    &nbsp;&nbsp;
+    <a class="tag-link" href="https://github.com/bovenlawforedu/enterprise-feishu-cs-bot" target="_blank" rel="noopener">⌨ 公开仓库</a>
+  </p>
+</main>
+<footer class="site">罗博文 Eric · AI Product Builder 作品集 · <a href="index.html">返回</a></footer>
+</body>
+</html>
