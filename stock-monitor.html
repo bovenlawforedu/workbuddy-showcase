@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>金融盯盘策略工作流（恒生电子 + 天下秀） · 罗博文 Eric AI Product Builder 作品集</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="back" href="index.html">← 返回作品集</a>
+    <div class="eyebrow">金融投研 · 数据可视化 · 自动化工作流</div>
+    <h1>金融盯盘策略工作流（恒生电子 + 天下秀）</h1>
+    <p class="lead">把"盯盘"从拍脑袋变成可重复、可追溯的策略工作流：固定标的（恒生电子 600570 / 天下秀 600556）按交易日自动产出<strong>唯一明确的买卖动作</strong>——双源行情核验 → 信号模型打分 → 一条动作 → 微信推送。核心不是预测涨跌，而是用规则锁死情绪：今天做不做，由信号模型说了算，不由盘面说了算。</p>
+    <div class="badges"><span class="badge">量化信号模型</span><span class="badge">双源行情核验</span><span class="badge">持续监测序列</span><span class="badge">微信推送闭环</span></div>
+  </div>
+</header>
+<main class="wrap">
+  <div class="note">
+    <strong>合规边界声明（重要）：</strong>本项目为<strong>个人投资研究方法演示</strong>，仅用上市公司公开标的（恒生电子 / 天下秀）做策略工作流演示，<strong>不含个人持仓、内幕信息，不构成投资建议</strong>。真实投顾场景须先复核证券法与投顾资质边界。
+  </div>
+
+  <section>
+    <h2>1. 背景（要解决什么）</h2>
+    <p>盯盘最容易情绪化：涨了想追、跌了想割，最后动作完全由盘面情绪决定。三个真问题：</p>
+    <ul>
+      <li><strong>单源行情可能出错</strong> —— 一个行情源的错误数据会直接带偏判断，需要双源交叉核验。</li>
+      <li><strong>盯盘动作不可复现</strong> —— 同样的价格位置，今天一个判断明天一个判断，规则不在纸上，全在脑子里。</li>
+      <li><strong>一次报告说完就忘</strong> —— 静态报告看完即弃，关键数据节点（季报/中报）没人提醒，策略没有时间轴。</li>
+    </ul>
+    <div class="callout">解法：把规则<strong>前置成可打分、可复现的信号模型</strong>，用一套按交易日累积的自动化工作流，让"今天做不做、做什么"有唯一答案。</div>
+  </section>
+
+  <section>
+    <h2>2. 我做了什么（端到端工作流）</h2>
+    <table>
+      <tr><th>环节</th><th>动作</th><th>作用</th></tr>
+      <tr><td>① 交易日判定</td><td>核对 A 股交易日历，非交易日自动跳过</td><td>避免休市日误执行监测</td></tr>
+      <tr><td>② 双源行情核验</td><td>东方财富 push2 + 腾讯 gtimg 双源拉取，比对时间戳与关键价</td><td>防单源数据错误带偏判断（恒生侧走 westock 备份路径）</td></tr>
+      <tr><td>③ 分层价位对照</td><td>现价 vs 支撑 / MA20 / 卖出区 / 加仓区</td><td>先摆事实：价格处在策略地图的哪个格子</td></tr>
+      <tr><td>④ 信号模型打分</td><td>恒生「反转清单 8 项」/ 天下秀「4 信号加权拐点指数」</td><td>规则化打分，量化"现在是什么状态"</td></tr>
+      <tr><td>⑤ 唯一动作输出</td><td>减仓 / 加仓 / 持有 / 建仓信号，逐条给明确指令</td><td>不模棱两可：今天到底做不做、做什么</td></tr>
+      <tr><td>⑥ 微信推送</td><td>ClawBot 推送简报；token 失效走缓存续发兜底</td><td>收盘后自动送达，不看盘也拿到结论</td></tr>
+      <tr><td>⑦ 前瞻预告</td><td>标注关键数据节点（如中报披露 08-27）</td><td>预告"信号何时才可能实质更新"，不空等</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>3. 双标的：同一套方法论，两种策略形态</h2>
+    <table>
+      <tr><th></th><th>恒生电子 600570（持仓策略向）</th><th>天下秀 600556（建仓策略向）</th></tr>
+      <tr><td><strong>策略问题</strong></td><td>已持仓怎么管：何时减滚动仓、何时加仓、何时清</td><td>未建仓怎么进：何时值得建仓、建多少、分几档</td></tr>
+      <tr><td><strong>资金分层</strong></td><td>核心仓 700 股不动 / 滚动仓 400 股高抛低吸 / 干火药持币</td><td>主建仓区（3.2 元）/ 重仓安全区（2.2 元）两级</td></tr>
+      <tr><td><strong>信号模型</strong></td><td>反转清单 8 项打分 + 加仓硬门槛（①③④+⑤ 同时满足）</td><td>4 信号加权拐点指数（盈利 0.30 / 现金 0.30 / 毛利 0.20 / 成长 0.20）</td></tr>
+      <tr><td><strong>输出形态</strong></td><td>HTML 盯盘简报（可转发 / 可打印）</td><td>Markdown 建仓监测 + HTML 分析页</td></tr>
+    </table>
+    <div class="callout">同一套 7 步工作流跑两个相反方向的策略（已持仓 vs 未建仓）——验证的是方法论本身的<strong>可迁移性</strong>，而不是某一支股票的结论。</div>
+  </section>
+
+  <section>
+    <h2>4. 信号模型怎么"用规则锁死情绪"</h2>
+    <h3>恒生电子：反转清单 8 项 + 加仓硬门槛</h3>
+    <p>每日对 8 项逐条打分（站上 MA20 且拐头 / MA5 上穿 MA10 / 量能放大 / MACD 金叉 / 不创新低 / 大盘企稳 / 主力净流入 / 基本面无恶化），得分变化直接驱动动作。例：08-12 期清单 4/8（较前日 6/8 回落，因短均死叉 + 缩量）→ 动作 = 滚动仓挂 22.70–23.00 清仓落袋（成本 21.07，浮盈 +8.2%），核心仓不动，干火药持币。</p>
+    <h3>天下秀：4 信号加权拐点指数</h3>
+    <p>按季报数据算拐点指数 = (盈利×0.30 + 现金×0.30 + 毛利×0.20 + 成长×0.20)×100，再套两档建仓信号：<code>(a) 拐点≥60 且价格≤3.2</code> / <code>(b) 拐点≥30 且价格≤2.2</code>。例：08-06 期指数 = 15.0/100（盈利与毛利未达标、现金仅一季为正、成长不达标）→ 今日无建仓信号 ❌，并预告中报 08-27 披露是信号实质更新的下一个节点。</p>
+  </section>
+
+  <section>
+    <h2>5. 交付与结果</h2>
+    <p><strong>交付物：</strong>恒生电子 16 期 HTML 盯盘简报（07-15 ~ 08-12）+ 持仓策略体检 + 策略落地工具包；天下秀建仓位置分析 + 建仓拐点模型（HTML）+ 5 期 Markdown 建仓监测（07-22 ~ 08-06）。</p>
+    <p><strong>结果：</strong>盯盘从"每天拍脑袋"变成"每天跑一遍可复现的规则管线"；同一套工作流在两个相反策略方向上验证通过；纯前端交付零依赖、可转发可打印，行情双源核验 + 推送 token 兜底保证链路健壮。</p>
+  </section>
+
+  <section>
+    <h2>与 AI Product Builder / FDE 岗位的对应</h2>
+    <table>
+      <tr><th>FDE / Builder 能力</th><th>本项目证据</th></tr>
+      <tr><td>把模糊需求工程化</td><td>"盯盘"这个模糊动作 → 拆成 7 步可执行、可复现的工作流</td></tr>
+      <tr><td>判断不外包给情绪</td><td>规则前置成可打分信号模型，输出唯一明确动作而非模棱两可建议</td></tr>
+      <tr><td>数据可信优先</td><td>双源行情交叉核验防单点错误——策略可信的前提是数据可信</td></tr>
+      <tr><td>持续性交付</td><td>按交易日累积的监测序列（16 期 + 5 期），不是一次性报告</td></tr>
+      <tr><td>工程链路健壮</td><td>纯前端零依赖交付 + 微信推送 token 失效兜底</td></tr>
+    </table>
+  </section>
+
+  <div class="note"><strong>关于「复用」的纪律：</strong>本项目的"7 步工作流 / 双源核验 / 信号模型化 / 唯一动作输出"是<strong>方法论逻辑</strong>，可迁移到任何需要"把主观判断规则化"的场景（投研、运营、质检）；但具体价位、权重、清单项属于特定标的的策略参数，换标的必须重新定义，不套用。</div>
+  <p style="margin-top:20px">
+    <a class="tag-link" href="index.html">← 返回作品集</a>
+  </p>
+</main>
+<footer class="site">罗博文 Eric · AI Product Builder 作品集 · <a href="index.html">返回</a></footer>
+</body>
+</html>
