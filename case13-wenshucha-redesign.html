@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>文书查官网改版 · 罗博文 Eric AI Product Builder 作品集</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <div class="wrap">
+    <a class="back" href="index.html">← 返回作品集</a>
+    <div class="eyebrow">AI 协作端到端落地 · 一日跑通"分析→原型→正式开发→上线"</div>
+    <h1>文书查官网改版</h1>
+    <p class="lead">一个 1.6 亿裁判文书数据底座上长出来的法律 AI 工具网站，需要从"首页+四转化路径+独立角色门+独立私有化页面+独立类案洞察页"重构，并部署上线。整条链路从用户判断到产品方案、原型、正式开发、上线——一天内和 AI 协作完成。</p>
+    <div class="badges">
+      <span class="badge">需求侧第一性原理</span>
+      <span class="badge">原型→正式开发→部署</span>
+      <span class="badge">Astro 静态站</span>
+      <span class="badge">GEO 基建</span>
+      <span class="badge">数据层抽象</span>
+      <span class="badge">vibe coding 一日交付</span>
+    </div>
+  </div>
+</header>
+<main class="wrap">
+
+  <section>
+    <h2>1. 背景与需求</h2>
+    <p><strong>目标站</strong>：wenshucha.com —— 一个法律行业 SaaS + 司法数据底座 + 私有化部署三合一的官网。现状是把 5 类用户（律师/法务/律所/法院政府/高校厂商）混在一页长滚动里平铺，真实产品（检索系统、AI 助手）被埋在中段；on-premise 这种高客单路径被压在最底部。</p>
+    <p><strong>改版要求（用户原话）</strong>：可视化程度高、动线清晰、可用性强、具备传播属性。先不写代码，先把"是什么、改什么、怎么改"想清楚。</p>
+  </section>
+
+  <section>
+    <h2>2. 关键思考过程与取舍</h2>
+    <p>下面把这次决策的"为什么"完整写出来——这是我和 AI 协作时最花时间的一段，比写代码难得多。</p>
+
+    <h3>① 进场判断：第一性原理 vs 类比思维</h3>
+    <p>绝大多数法律 SaaS 官网都长一样：大段功能列表 + 商务联系电话 + 案例 logo。我没照着改，先问了一个基础问题：<strong>这个网站真正在卖的是什么？</strong></p>
+    <p>答案：1.6 亿份公开裁判文书是原料，几乎零边际成本复制。真正值钱的是"检索+推理"的<strong>可用性</strong>，不是数据稀缺性。所以官网唯一要做的，是让一个律师在 3 秒内体验到"我的问题 → 可信答案/类案"。现状用大段 feature list 代替体验，是舍本逐末。</p>
+    <p>进一步看业务结构，文书查实际是<strong>三桩生意共用一个门面</strong>：① 律师/法务 SaaS（免费 8 次/天获客）；② 司法数据底座（API/MCP/语料，to 高校/AI 厂商）；③ 私有化部署（高客单，三年服务）。三种生意的转化路径完全不同，挤在同一页里互相干扰——这是动线混乱的根。</p>
+
+    <h3>② 三个决策点：怎么选、为什么这样选</h3>
+    <table>
+      <tr><th>决策</th><th>选项</th><th>我选了什么、为什么</th></tr>
+      <tr>
+        <td>技术栈</td>
+        <td>A. 端菜式（SSG/SSR） / B. 端菜+现炒混合（SPA+预渲染） / C. 纯现炒（SPA 不处理）</td>
+        <td>选 A。理由：B 的"现炒"是为"每个用户登录后界面不同"的场景，文书查官网是营销站、内容固定，没有这个需求；C 直接否决——会毁掉已有的 GEO 地基（AI 读不到内容）。A 最简单也最稳。</td>
+      </tr>
+      <tr>
+        <td>角色门做多深</td>
+        <td>A. 4 个独立落地页 / B. 首页锚点区块</td>
+        <td>选 A，但分两步：先做最有价值的 2 个（律师 + 法院政府，一个管免费主线、一个管私有化大单），其余先用锚点。SEO 精准、转化强，但不一次性扛 4 个页面。</td>
+      </tr>
+      <tr>
+        <td>类案洞察放哪</td>
+        <td>A. 独立页面 + 首页入口 / B. 首页内嵌</td>
+        <td>选 A，两段式：首页放"小预览"（输入案由→弹出分布图→"看完整报告"跳独立页）。传播链接短、可被 AI 收录、可承载玩法（热门案由榜、收藏），B 塞进臃肿首页反而拖性能。</td>
+      </tr>
+    </table>
+
+    <h3>③ 三个参考站：明确取什么、不取什么</h3>
+    <ul>
+      <li><strong>取</strong> plugnow 的"搜索优先 hero + 单一主 CTA + 证据 chips"（来源可信感）</li>
+      <li><strong>取</strong> workbuddy.homes 的"角色路径 + live 计数器 + build in public 社区"（动线+传播）</li>
+      <li><strong>取</strong> polsia 的"暗色 command-center 高级感"（私有化专页用）</li>
+      <li><strong>不取</strong> polsia 的"NEVER HIRE AGAIN"激进文案——法律用户保守，激进话术会伤专业信任</li>
+    </ul>
+
+    <h3>④ GEO 红线：地基的 80 分 + 改版的 3 条不能丢</h3>
+    <p>实抓目标站发现地基其实已经 80 分：robots 放行全部主流 AI 爬虫、llms.txt 存在且质量高、首页 4 块 JSON-LD（WebSite+SearchAction/Organization/SoftwareApplication/FAQPage）、SSR 正文可见。这意味着改版最大的风险不是"没做"，是"把已做好的弄丢"。我在开发前定死三条线：</p>
+    <ol>
+      <li>正文必须在 HTML 里直接可见（端菜式），不能改成 SPA 不处理</li>
+      <li>结构化数据（FAQPage/SoftwareApplication 等）随内容自动带过去</li>
+      <li>robots/llms.txt 配 CI 校验防覆盖</li>
+    </ol>
+
+    <h3>⑤ 数据层抽象：为"后续接真实数据"留一文件改动</h3>
+    <p>真实 1.6 亿数据接入是后面的事，但工程结构必须现在就铺好——把数据访问封在 <code>src/lib/api.ts</code> 一个文件里（getCaseKeys / getCaseData / searchCases / filterItems），演示数据放 <code>src/data/cases.ts</code>。以后接真实数据 = 改 <code>api.ts</code> 内部实现（换成 fetch 真实 API），9 个页面零改动。这是"开发时把可扩展性想清楚"的一次体现。</p>
+  </section>
+
+  <section>
+    <h2>3. 我做了什么（从原型到上线的真实链路）</h2>
+    <h3>① 可点击原型：先看动线对不对</h3>
+    <p>没立刻写正式工程。先用纯 HTML/CSS/JS 做了 9 个页面的可点击原型（搜索→检索页结果→勾选→报告模态；类案洞察切案由→图表更新→canvas 生成分享图→下载），把"动线走通"这步先验证了。原型的页脚"数据是演示假数据"标得很清楚——不能拿演示数据当正式产品看。</p>
+
+    <h3>② 正式开发：选 Astro，端菜式自动满足 GEO</h3>
+    <p>原型验证完动线 OK，转正式工程。选 Astro 的理由：它天生输出纯静态 HTML，端菜式 GEO 红线自动满足；导航/页脚做成组件（BaseLayout/Nav/Footer）后，9 个页面不用再复制粘贴；数据通过 <code>src/lib/api.ts</code> 访问，为接真实数据铺路。9 个页面 + 共享组件 + 共享脚本 + 共享样式 + 数据层 + 5 个静态资源（robots/llms/favicon/og-image/.nojekyll）。</p>
+
+    <h3>③ GitHub Pages 部署：一条命令的工程化</h3>
+    <p>写了一个 <code>deploy.sh</code>，把"build → 切 gh-pages 分支 → 推产物"串成一条命令。改内容跑这一条，1-2 分钟自动生效。过程中踩了几个值得记的坑：</p>
+    <ul>
+      <li>mac 老 git 推送 <code>HTTP 400</code> → <code>http.postBuffer</code> 调大</li>
+      <li>GitHub Pages 默认跑 Jekyll 会吞掉 <code>_astro</code>（下划线开头）→ 必须 <code>public/.nojekyll</code></li>
+      <li>子路径部署（<code>bovenlawforedu.github.io/wenshucha-site/</code>）需要把站内链接都加 base 前缀 → 用 <code>import.meta.env.BASE_URL</code> 在所有内链拼接</li>
+      <li>preview build 的 canonical 仍指向正式域名 <code>wenshucha.com</code> → 防预览站污染 SEO</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4. 交付与结果</h2>
+    <p><strong>三个交付层</strong>：</p>
+    <ul>
+      <li><strong>信息架构 + 线框图</strong>：1 个 Hub + 4 角色门 + 3 转化路径 + GEO 基建清单 + 3 个待拍板决策</li>
+      <li><strong>可点击高保真原型</strong>：9 个页面，搜索/筛选/报告/类案洞察图表/canvas 分享图下载/预约表单全部交互跑通</li>
+      <li><strong>正式开发版</strong>：Astro 静态站 + 完整 GEO 基建（canonical/hreflang/JSON-LD/robots/llms/sitemap）+ 数据层抽象 + GitHub Pages 部署脚本</li>
+    </ul>
+    <p><strong>在线预览</strong>：<a href="https://bovenlawforedu.github.io/wenshucha-site/" target="_blank" rel="noopener">bovenlawforedu.github.io/wenshucha-site</a>（仓库 <code>bovenlawforedu/wenshucha-site</code>，公开）</p>
+    <p><strong>结果</strong>：把"一个律师 3 秒能体验到产品"这件事做出来了。改版前用户要先滚过 8 段功能介绍才能找到"免费试用"按钮；改版后首页第一屏就是搜索框，点一下直达真实产品——这才是 SaaS 官网该有的形态。9 个页面、3 套转化路径、1 套数据层抽象、1 套 GEO 基建、1 条部署命令——全部跑通。</p>
+  </section>
+
+  <section>
+    <h2>5. 关键代码片段</h2>
+    <h3>数据层抽象（核心：后续接真实数据只改这一个文件）</h3>
+    <pre><code>// src/lib/api.ts
+export function getCaseData(key: string): CaseData | null {
+  return CASES[key] ?? null;          // 现在返回演示数据
+}
+export function searchCases(query: string) {
+  const q = (query || '').trim();
+  if (CASES[q]) return { key: q, data: CASES[q], matched: true };
+  return { key: DEFAULT_CASE, data: CASES[DEFAULT_CASE], matched: false };
+  // 后续接真实 API：把内部实现换成 fetch，签名保持稳定 → 9 个页面零改动
+}</code></pre>
+    <h3>部署脚本（一条命令上线）</h3>
+    <pre><code>#!/bin/bash
+# deploy.sh
+set -e
+cd "$(dirname "$0")"
+ASTRO_BASE=/wenshucha-site/ npm run build
+git checkout gh-pages 2>/dev/null || git checkout --orphan gh-pages
+git rm -rfq . &gt;/dev/null 2&gt;&amp;1 || true
+cp -r dist/. .
+git add -A
+git commit -m "deploy $(date +%Y-%m-%d_%H%M)" &gt;/dev/null 2&gt;&amp;1 || true
+git push origin gh-pages --force
+git checkout main
+echo "✅ 完成：https://bovenlawforedu.github.io/wenshucha-site/"</code></pre>
+  </section>
+
+  <section>
+    <h2>6. 反思：哪些没做、为什么没做</h2>
+    <ul>
+      <li><strong>没接真实数据</strong>：用户明确"先原型后接数据"，演示数据全部标注 DEMO，不能拿去对外。这是工程纪律，不是偷懒。</li>
+      <li><strong>没做移动端深度适配</strong>：CSS 有基本响应式，但移动端要点没专门做。下次做完整版时单独迭代。</li>
+      <li><strong>法务/高校厂商两门暂用锚点</strong>：决策是"分两步走"——先验证律师+法院政府两门的转化漏斗，验证有效再补齐。一次性做 4 个门是过度工程。</li>
+    </ul>
+  </section>
+
+  <p class="meta">技术栈：Astro 5（静态站）+ TypeScript + 原生 HTML/CSS/JS。部署：GitHub Pages（gh-pages 分支 + deploy.sh）。预览：<a href="https://bovenlawforedu.github.io/wenshucha-site/" target="_blank" rel="noopener">bovenlawforedu.github.io/wenshucha-site</a>。时长：1 天（含思考+原型+开发+部署踩坑）。</p>
+</main>
+<footer class="site">罗博文 Eric · AI Product Builder 作品集 · <a href="index.html">返回</a></footer>
+</body>
+</html>
