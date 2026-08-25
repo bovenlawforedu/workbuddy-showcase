@@ -7,66 +7,92 @@
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="site">
-  <div class="wrap">
-    <div class="eyebrow">AI Product Builder · 作品集</div>
-    <h1>我是那种会把模糊想法<br>落成能跑产品的人</h1>
-    <p class="lead">先说清楚我是什么样的人：复合型、能落地、执行力强、脑子清楚。11 年下来我做过电商、新媒体、跨境贸易、室内设计，现在拿 Codex、Workbuddy、TRAE 这些 AI 工具，把真实需求先弄成能跑的原型，再变成真能用的系统。下面这 13 个都是我自己一手推出来的，不是 PPT 上的概念。</p>
-    <div class="badges">
-      <span class="badge">0-1 产品落地</span>
-      <span class="badge">AI 编程工具</span>
-      <span class="badge">端到端构建</span>
-      <span class="badge">真实用户需求</span>
-      <span class="badge">设计与体验细节</span>
+
+<!-- 顶部导航 -->
+<nav class="nav">
+  <div class="wrap" style="display:flex;align-items:center;justify-content:space-between;width:100%;padding:0 32px;">
+    <a class="brand" href="index.html">Eric · AI Product Builder</a>
+    <div class="links">
+      <a href="index.html#about">关于我</a>
+      <a href="index.html#samples">13 个样本</a>
+      <a href="methodology.html">工作方式</a>
+      <a href="index.html#tools">工具箱</a>
+    </div>
+    <a class="cta" href="mailto:bovenlaw@gmail.com">联系我</a>
+  </div>
+</nav>
+
+<!-- Hero 左右分栏 -->
+<header class="site hero">
+  <div class="wrap" style="display:grid;grid-template-columns:1.6fr 1fr;gap:56px;align-items:center;">
+    <div>
+      <div class="eyebrow">AI Product Builder · 作品集</div>
+      <h1 style="font-size:66px;line-height:1.16;margin:26px 0 30px;">我是那种会把模糊想法<br>落成能跑产品的人</h1>
+      <p style="font-size:20px;color:var(--ink-2);margin:0;">13 个亲手推进、能跑的真实交付 <span style="color:var(--accent)">·</span> <span style="color:var(--muted)">不是 PPT 上的概念</span></p>
+      <p style="font-size:15px;color:var(--muted-2);margin:22px 0 30px;">11 年横跨电商、新媒体、跨境贸易、室内设计 | 现在用 AI 把真实需求做成能用的系统</p>
+      <div class="badges">
+        <span class="badge">0-1 产品落地</span>
+        <span class="badge">AI 编程工具</span>
+        <span class="badge">端到端构建</span>
+        <span class="badge">真实用户需求</span>
+        <span class="badge">设计与体验细节</span>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;">
+      <img src="assets/ai-meme-cat.png" alt="NO THANKS, I USE AI" style="width:340px;height:440px;border-radius:16px;object-fit:cover;border:1px solid var(--line);">
     </div>
   </div>
 </header>
+
 <main class="wrap">
 
-  <section>
+  <!-- 关于我 -->
+  <section id="about">
     <h2>关于我</h2>
     <div class="profile">
       <img class="avatar" src="assets/avatar.png" alt="罗博文 Eric">
       <div class="body">
         <h3>罗博文 Eric</h3>
         <div class="role">AI Product Builder · 用 AI 工具把想法做出来</div>
-
-      <h4>我的四个优势</h4>
-      <table>
-        <tr><th>优势</th><th>它意味着什么</th></tr>
-        <tr><td><strong>复合型</strong></td><td>做过运营、商务、项目管理、内容生产，能同时理解用户、商业、技术和设计。换岗不需要从头学。</td></tr>
-        <tr><td><strong>能落地</strong></td><td>每个项目最后都得落到一个能跑的东西——本地 AI 流水线、可交互原型、能复用的数据模板、每天自动推送的系统。光给方案不落地，我觉得没意义。</td></tr>
-        <tr><td><strong>执行力强</strong></td><td>遇到模糊需求会先拆最小闭环，2 小时内跑通验证；遇到边界问题会先列清楚约束再推进，不会等领导喂答案。</td></tr>
-        <tr><td><strong>思维和逻辑清楚</strong></td><td>我习惯用第一性原理去拆问题，把乱糟糟的项目理成「需求→假设→原型→验证→放大」这么个节奏。</td></tr>
-      </table>
-
-      <h4>两段核心经历</h4>
-      <p><strong>第一段：从电商运营到跨境电商，练出全流程交付能力。</strong></p>
-      <p>做过电商运营、新媒体广告营销，签过 300+ 抖音 / 快手 KOL，管理过 5000 万+ 曝光；后来做跨境电商广告营销，玩具 / 电子 / 家居类目合同金额近 140 万美金。这段经历让我理解一件事是怎么从需求、采购、履约、回款全链路跑下来的。边界条件是汇率波动、供应商交期、客户账期，每个变量都能让项目死在中途。我养成一个习惯：项目启动前先列出所有可能让项目卡住的点，再决定要不要接、怎么接。</p>
-
-      <p><strong>第二段：从室内设计商务到独立顾问，练出跨角色协调能力。</strong></p>
-      <p>做过高端别墅设计工程商务，面对长周期、多角色（业主、设计师、施工方、供应商）、高客单价项目。这里最大的挑战不是技术，是信息同步和预期管理。我学会在各方信息不一致时，先把真实约束拍在桌面上，再推动下一步。这个能力直接迁移到我现在做 AI 项目：先把用户和需求的数据边界、决策权限、失败成本对齐，再动手。</p>
-
-      <h4>简历与作品集的对应关系</h4>
-      <table>
-        <tr><th>简历里的积累</th><th>在作品集里如何被验证</th></tr>
-        <tr><td>新媒体 / KOL·KOC（抖音、快手，签约 300+ KOL、曝光 5000 万+）</td><td><a href="mike.html">抖音达人账号拆解</a>：把"爆款感"翻译成 5 条可迁移方法论</td></tr>
-        <tr><td>跨境贸易（玩具 / 电子 / 家居，合同近 140 万美金）</td><td><a href="market-research.html">零售 / 玩具市场调研</a>：搭了一套能反复用的情报流程 + 54 万行真实订单诊断</td></tr>
-        <tr><td>室内设计商务（高端别墅设计工程）</td><td><a href="commercial-design.html">商业空间设计 AI 交付链</a>（真实任务书从头到尾跑通：竞标→深化→概念图→软硬清单→汇报）；<a href="sss-tv.html">SSS 投屏系统</a> 的完整产品判断力</td></tr>
-        <tr><td>市场总监（深圳才茂：ROI +20%、份额 +15%、成本 -10%、团队绩效 +25%）</td><td>市场策略与成本意识沉淀在 <a href="assessment.html">测评 MVP 瘦身</a>、<a href="growth.html">成长飞轮 V2</a> 等产品落地中</td></tr>
-        <tr><td>现用 AI 工具独立做产品</td><td><a href="commercial-design.html">商业空间 AI 交付链</a> 验证真实任务书从头到尾跑通；<a href="methodology.html">我的工作方式</a>：0-1 节奏、先质疑惯例、数字诚实、安全与治理前置</td></tr>
-      </table>
+        <p>先说清楚我是什么样的人：复合型、能落地、执行力强、脑子清楚。11 年下来我做过电商、新媒体、跨境贸易、室内设计，现在拿 Codex、Workbuddy、TRAE 这些 AI 工具，把真实需求先弄成能跑的原型，再变成真能用的系统。下面这 13 个都是我自己一手推出来的，不是 PPT 上的概念。</p>
       </div>
     </div>
+
+    <h3>我的四个优势</h3>
+    <table>
+      <tr><th>优势</th><th>它意味着什么</th></tr>
+      <tr><td><strong>复合型</strong></td><td>做过运营、商务、项目管理、内容生产，能同时理解用户、商业、技术和设计。换岗不需要从头学。</td></tr>
+      <tr><td><strong>能落地</strong></td><td>每个项目最后都得落到一个能跑的东西——本地 AI 流水线、可交互原型、能复用的数据模板、每天自动推送的系统。光给方案不落地，我觉得没意义。</td></tr>
+      <tr><td><strong>执行力强</strong></td><td>遇到模糊需求会先拆最小闭环，2 小时内跑通验证；遇到边界问题会先列清楚约束再推进，不会等领导喂答案。</td></tr>
+      <tr><td><strong>思维和逻辑清楚</strong></td><td>我习惯用第一性原理去拆问题，把乱糟糟的项目理成「需求→假设→原型→验证→放大」这么个节奏。</td></tr>
+    </table>
+
+    <h3>两段核心经历</h3>
+    <p><strong>第一段：从电商运营到跨境电商，练出全流程交付能力。</strong></p>
+    <p>做过电商运营、新媒体广告营销，签过 300+ 抖音 / 快手 KOL，管理过 5000 万+ 曝光；后来做跨境电商广告营销，玩具 / 电子 / 家居类目合同金额近 140 万美金。这段经历让我理解一件事是怎么从需求、采购、履约、回款全链路跑下来的。边界条件是汇率波动、供应商交期、客户账期，每个变量都能让项目死在中途。我养成一个习惯：项目启动前先列出所有可能让项目卡住的点，再决定要不要接、怎么接。</p>
+    <p><strong>第二段：从室内设计商务到独立顾问，练出跨角色协调能力。</strong></p>
+    <p>做过高端别墅设计工程商务，面对长周期、多角色（业主、设计师、施工方、供应商）、高客单价项目。这里最大的挑战不是技术，是信息同步和预期管理。我学会在各方信息不一致时，先把真实约束拍在桌面上，再推动下一步。这个能力直接迁移到我现在做 AI 项目：先把用户和需求的数据边界、决策权限、失败成本对齐，再动手。</p>
+
+    <h3>简历与作品集的对应关系</h3>
+    <table>
+      <tr><th>简历里的积累</th><th>在作品集里如何被验证</th></tr>
+      <tr><td>新媒体 / KOL·KOC（抖音、快手，签约 300+ KOL、曝光 5000 万+）</td><td><a href="mike.html">抖音达人账号拆解</a>：把"爆款感"翻译成 5 条可迁移方法论</td></tr>
+      <tr><td>跨境贸易（玩具 / 电子 / 家居，合同近 140 万美金）</td><td><a href="market-research.html">零售 / 玩具市场调研</a>：搭了一套能反复用的情报流程 + 54 万行真实订单诊断</td></tr>
+      <tr><td>室内设计商务（高端别墅设计工程）</td><td><a href="commercial-design.html">商业空间设计 AI 交付链</a>（真实任务书从头到尾跑通：竞标→深化→概念图→软硬清单→汇报）；<a href="sss-tv.html">SSS 投屏系统</a> 的完整产品判断力</td></tr>
+      <tr><td>市场总监（深圳才茂：ROI +20%、份额 +15%、成本 -10%、团队绩效 +25%）</td><td>市场策略与成本意识沉淀在 <a href="assessment.html">测评 MVP 瘦身</a>、<a href="growth.html">成长飞轮 V2</a> 等产品落地中</td></tr>
+      <tr><td>现用 AI 工具独立做产品</td><td><a href="commercial-design.html">商业空间 AI 交付链</a> 验证真实任务书从头到尾跑通；<a href="methodology.html">我的工作方式</a>：0-1 节奏、先质疑惯例、数字诚实、安全与治理前置</td></tr>
+    </table>
   </section>
 
-  <section>
+  <!-- 我的工作方式 -->
+  <section id="method">
     <h2>我的工作方式</h2>
     <div class="callout">我做 0-1 产品的节奏是：<strong>需求 → 假设 → 原型 → 验证 → 放大</strong>。不会先憋一份完整 PRD，而是先花 2 小时搭一个能跑的最小闭环，证明有价值再继续。</div>
     <p>详见 <a href="methodology.html">我怎么做 0-1 产品</a>。</p>
   </section>
 
-  <section>
+  <!-- 13 个样本 -->
+  <section id="samples">
     <h2>13 个样本：全是亲手推进、能跑的东西</h2>
 
     <h3>0-1 AI 系统</h3>
@@ -175,39 +201,68 @@
         <p><a href="case13-wenshucha-redesign.html">查看 →</a> · <a href="https://bovenlawforedu.github.io/wenshucha-site/" target="_blank" rel="noopener">Live Demo</a></p>
       </div>
     </div>
-
   </section>
+</main>
 
-  <section>
+<!-- 工具箱（深色段） -->
+<div class="dark-band" id="tools">
+  <div class="wrap">
+    <div class="eyebrow">我手里的家伙</div>
     <h2>我的工具箱</h2>
-    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-      <div class="card">
+    <p class="lead">按「端到端构建」来配，让想法从纸面一路跑到能点开的东西。</p>
+    <div class="tools-grid">
+      <div class="tool-card">
+        <div class="n">01</div>
         <h3>AI 编程</h3>
         <p>Codex / Workbuddy / TRAE 等这类 AI 工具，用自然语言 + 代码把想法落成可运行原型。</p>
       </div>
-      <div class="card">
+      <div class="tool-card">
+        <div class="n">02</div>
         <h3>Agent 与工作流</h3>
         <p>LLM、Tool Use、工作流编排、提示词工程，把重复步骤交给 Agent。</p>
       </div>
-      <div class="card">
+      <div class="tool-card">
+        <div class="n">03</div>
         <h3>原型与体验</h3>
         <p>可交互原型、Figma、信息结构设计、文案与反馈细节。</p>
       </div>
-      <div class="card">
+      <div class="tool-card">
+        <div class="n">04</div>
         <h3>工程基础</h3>
         <p>Python / JavaScript / TypeScript、API 调用、Git、本地部署与云端切换。</p>
       </div>
     </div>
-  </section>
+  </div>
+</div>
 
+<!-- 复用纪律 -->
+<main class="wrap" style="padding-top:56px;">
   <section>
-    <div class="note">
-      <strong>关于「复用」的纪律：</strong>项目之间相互独立；能跨项目复用的<strong>只有方法论逻辑</strong>（如"把设计语言沉淀成库+关键时调用适配"），<strong>绝不复用具体细节</strong>——风格、客户画像、客户需求等。换项目必须重新进现场定义其专属细节。
+    <div class="card">
+      <div class="eyebrow" style="color:var(--accent);font-size:12px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px;">关于「复用」的纪律</div>
+      <p style="font-family:var(--serif);font-size:19px;color:var(--ink-2);line-height:1.75;margin:0;">项目之间相互独立；能跨项目复用的<strong>只有方法论逻辑</strong>（如"把设计语言沉淀成库+关键时调用适配"），<strong>绝不复用具体细节</strong>——风格、客户画像、客户需求等。换项目必须重新进现场定义其专属细节。</p>
     </div>
   </section>
 </main>
+
+<!-- 底部 CTA（头像 + 联系我） -->
+<div class="cta-band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">现在我们聊聊</div>
+      <h2>有个模糊想法？我把它做成能跑的东西。</h2>
+      <p>如果你有一个还没被验证的需求，或者一个卡在纸面上的方案——我可以先在 2 小时内搭一个最小闭环，证明它值得做，再决定要不要继续。</p>
+    </div>
+    <div class="cta-right">
+      <img class="cta-avatar" src="assets/avatar.png" alt="罗博文 Eric">
+      <a class="cta-btn" href="mailto:bovenlaw@gmail.com">联系我</a>
+    </div>
+  </div>
+</div>
+
 <footer class="site">
   罗博文 Eric · AI Product Builder 作品集 · 全部内容已脱敏（不含任何私人录音 / 持仓 / 凭证 / 真实对话）· GitHub Pages
 </footer>
+
 </body>
 </html>
